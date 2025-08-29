@@ -1,6 +1,14 @@
+import Footer from "./common/Footer"
+import Header from "./common/Header"
+import Home from "./component/Home"
+
 const App = () => {
   return (
-    <div className="bg-black">App</div>
+    <div>
+      <Header />
+      <Home />
+      <Footer />
+    </div>
   )
 }
 
