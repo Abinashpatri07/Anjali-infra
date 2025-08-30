@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FaFacebookF, FaInstagram, FaLinkedin, FaTwitter, FaBars, FaTimes } from "react-icons/fa";
-import { logo } from "../assets/Image";
+import { logo2 } from "../assets/Image";
 
 const Header: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -41,7 +41,7 @@ const Header: React.FC = () => {
         {/* Logo (Always Centered) */}
         <div className="flex-shrink-0">
           <img 
-          src={logo} 
+          src={logo2} 
           alt="Logo" 
           className="h-8 sm:h-10 md:h-12 lg:h-16 w-auto object-contain"
         />
