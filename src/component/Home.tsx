@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Founder from "./Founder";
 import OurPartner from "./OurPartner";
-import {back1,img,logo,logo2} from "../assets/Image"
+import {back1,img} from "../assets/Image"
 
 const Home: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);

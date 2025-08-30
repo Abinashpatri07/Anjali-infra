@@ -185,7 +185,7 @@ const OurPartner = () => {
         </div>
 
         {/* Stats Section */}
-        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        {/* <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           <div className="bg-white/90 backdrop-blur-sm rounded-lg p-6 shadow-lg shadow-blue-200/40 hover:shadow-blue-300/50 transition-all duration-200">
             <div className="text-3xl font-bold text-blue-600 mb-2">50+</div>
             <div className="text-gray-600">Global Partners</div>
@@ -202,7 +202,7 @@ const OurPartner = () => {
             <div className="text-3xl font-bold text-orange-600 mb-2">25+</div>
             <div className="text-gray-600">Countries</div>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );
