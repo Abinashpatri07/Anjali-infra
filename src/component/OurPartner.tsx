@@ -26,8 +26,8 @@ const OurPartner = () => {
     },
     {
       id: 5,
-      name: "Meta",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Meta_Platforms_Inc._logo.svg/512px-Meta_Platforms_Inc._logo.svg.png"
+      name: "Reliance",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Reliance_Industries_Logo.svg/512px-Reliance_Industries_Logo.svg.png"
     },
     {
       id: 6,
@@ -91,12 +91,32 @@ const OurPartner = () => {
     );
   };
 
-  const goToSlide = (index:number) => {
+  const goToSlide = (index: number) => {
     setCurrentIndex(index);
   };
 
+  // Helper function to determine if a card is in the center position(s)
+  const isInCenter = (partnerIndex: number) => {
+    const visibleStart = currentIndex;
+    const visibleEnd = currentIndex + itemsPerView - 1;
+    
+    if (partnerIndex >= visibleStart && partnerIndex <= visibleEnd) {
+      const positionInView = partnerIndex - visibleStart;
+      // For odd number of items, center is Math.floor(itemsPerView/2)
+      // For even number of items, we consider both middle positions as center
+      if (itemsPerView % 2 === 1) {
+        return positionInView === Math.floor(itemsPerView / 2);
+      } else {
+        const leftCenter = Math.floor(itemsPerView / 2) - 1;
+        const rightCenter = Math.floor(itemsPerView / 2);
+        return positionInView === leftCenter || positionInView === rightCenter;
+      }
+    }
+    return false;
+  };
+
   return (
-    <section className="py-16 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 relative overflow-hidden">
+    <section className="py-16 bg-gray-50 relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0 bg-gradient-to-r from-blue-100/20 to-purple-100/20"></div>
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-200/30 rounded-full blur-3xl animate-pulse"></div>
@@ -140,17 +160,25 @@ const OurPartner = () => {
                 transform: `translateX(-${(currentIndex * 100) / itemsPerView}%)`
               }}
             >
-              {partners.map((partner) => (
+              {partners.map((partner, index) => (
                 <div
                   key={partner.id}
                   className="flex-shrink-0 px-4"
                   style={{ width: `${100 / itemsPerView}%` }}
                 >
-                  <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-lg shadow-blue-200/50 hover:shadow-xl hover:shadow-blue-300/60 transition-all duration-300 p-8 h-32 flex items-center justify-center group hover:scale-105 border border-blue-100 hover:border-blue-300 hover:bg-blue-50/50">
+                  <div className={`bg-white/80 backdrop-blur-sm rounded-xl shadow-lg transition-all duration-500 p-8 h-32 flex items-center justify-center group border border-blue-100 hover:border-blue-300 hover:bg-blue-50/50 ${
+                    isInCenter(index) 
+                      ? 'scale-110 shadow-2xl shadow-blue-400/40 bg-white border-blue-300 ring-2 ring-blue-200/50' 
+                      : 'shadow-blue-200/50 hover:shadow-xl hover:shadow-blue-300/60 hover:scale-105'
+                  }`}>
                     <img
                       src={partner.logo}
                       alt={`${partner.name} logo`}
-                      className="max-h-16 max-w-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
+                      className={`max-w-full object-contain transition-all duration-500 ${
+                        isInCenter(index)
+                          ? 'max-h-20 filter-none drop-shadow-lg'
+                          : 'max-h-16 filter grayscale group-hover:grayscale-0'
+                      }`}
                       onError={(e) => {
                         const event = e.target as HTMLImageElement;
                         event.src = `data:image/svg+xml;base64,${btoa(`
@@ -184,25 +212,6 @@ const OurPartner = () => {
           </div>
         </div>
 
-        {/* Stats Section */}
-        {/* <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-          <div className="bg-white/90 backdrop-blur-sm rounded-lg p-6 shadow-lg shadow-blue-200/40 hover:shadow-blue-300/50 transition-all duration-200">
-            <div className="text-3xl font-bold text-blue-600 mb-2">50+</div>
-            <div className="text-gray-600">Global Partners</div>
-          </div>
-          <div className="bg-white rounded-lg p-6 shadow-sm">
-            <div className="text-3xl font-bold text-green-600 mb-2">15+</div>
-            <div className="text-gray-600">Years Experience</div>
-          </div>
-          <div className="bg-white rounded-lg p-6 shadow-sm">
-            <div className="text-3xl font-bold text-purple-600 mb-2">100K+</div>
-            <div className="text-gray-600">Projects Delivered</div>
-          </div>
-          <div className="bg-white rounded-lg p-6 shadow-sm">
-            <div className="text-3xl font-bold text-orange-600 mb-2">25+</div>
-            <div className="text-gray-600">Countries</div>
-          </div>
-        </div> */}
       </div>
     </section>
   );
