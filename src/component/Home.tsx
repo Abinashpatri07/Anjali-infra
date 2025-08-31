@@ -796,7 +796,7 @@ const Home: React.FC = () => {
       {/* Hero Section */}
       <section
         id="home"
-        className="min-h-screen relative flex items-center justify-center bg-gray-50"
+        className=" relative flex items-center justify-center bg-gray-50"
       >
         <div className="container mx-auto px-5 py-20 max-w-7xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -931,11 +931,11 @@ const Home: React.FC = () => {
         </div>
 
         {/* Scroll Down Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        {/* <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
           <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
             <div className="w-1 h-3 bg-gray-600 rounded-full mt-2 animate-pulse"></div>
           </div>
-        </div>
+        </div> */}
 
         {/* Service Detail Popups */}
         {activePopup && (
@@ -1048,7 +1048,7 @@ const Home: React.FC = () => {
           ></div>
         </div>
 
-        <div className="container mx-auto px-5 max-w-7xl relative z-10 pb-12">
+        <div className=" mx-auto px-5 max-w-7xl relative z-10 pb-12">
           {/* Section Header */}
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
