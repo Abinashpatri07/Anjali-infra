@@ -96,7 +96,13 @@ const Header: React.FC = () => {
               to="/strength"
               className="hover:text-blue-400 transition-colors duration-200"
             >
-              OUR PROFILE
+              PROFILE
+            </Link>
+            <Link
+              to="/project"
+              className="hover:text-blue-400 transition-colors duration-200"
+            >
+              PROJECT
             </Link>
             <Link
               to="/gallery"
@@ -104,12 +110,12 @@ const Header: React.FC = () => {
             >
               GALLERY
             </Link>
-            <Link
+            {/* <Link
               to="/about"
               className="hover:text-blue-400 transition-colors duration-200"
             >
               ABOUT
-            </Link>
+            </Link> */}
             <Link
               to="/contact"
               className="hover:text-blue-400 transition-colors duration-200"
@@ -186,10 +192,11 @@ const Header: React.FC = () => {
         <nav className="px-6 py-8 space-y-6">
           {[
             { to: "/", text: "HOME" },
-            { to: "/strength", text: "OUR PROFILE" },
+            { to: "/strength", text: "PROFILE" },
             { to: "/gallery", text: "GALLERY" },
+            { to: "/project", text: "PROJECT" },
             { to: "/contact", text: "CONTACT US" },
-            { to: "/about", text: "ABOUT" },
+            // { to: "/about", text: "ABOUT" },
           ].map((link, index) => (
             <Link
               key={link.text}
