@@ -116,7 +116,7 @@ const Strength: React.FC = () => {
         {/* Statistics Section */}
         <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8">
           {[
-            { number: "8+", label: "Team Members", color: "text-blue-600" },
+            { number: "25+", label: "Team Members", color: "text-blue-600" },
             { number: "5+", label: "Specializations", color: "text-purple-600" },
             { number: "100%", label: "Dedication", color: "text-emerald-600" },
             { number: "24/7", label: "Support", color: "text-orange-600" }

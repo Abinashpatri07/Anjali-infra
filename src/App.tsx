@@ -19,6 +19,7 @@ import Footer from "./common/Footer"
 import Header from "./common/Header"
 import Home from "./component/Home"
 import Strength from "./component/Strength"
+import Gallery from "./component/Gallery"
 
 const App = () => {
   return (
@@ -31,6 +32,7 @@ const App = () => {
 
         {/* Profile -> Strength Page */}
         <Route path="/strength" element={<Strength />} />
+        <Route path="/gallery" element={<Gallery />} />
       </Routes>
 
       <Footer />
