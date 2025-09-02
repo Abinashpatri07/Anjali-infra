@@ -5,7 +5,7 @@ import {img, img2, img3} from "../assets/Image"
 
 const Home: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isPlaying, setIsPlaying] = useState(true);
+  const [isPlaying] = useState(true);
   const [activePopup, setActivePopup] = useState<number | null>(null);
 
 
@@ -191,7 +191,7 @@ const Home: React.FC = () => {
       {/* Hero Section */}
       <section
         id="home"
-        className=" relative flex items-center justify-center bg-gray-50"
+        className=" relative flex items-center justify-center bg-gray-50 mt-3"
       >
         <div className="container mx-auto px-5 py-20 max-w-7xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -255,14 +255,14 @@ const Home: React.FC = () => {
                 </div>
 
                 {/* Play/Pause button */}
-                <div className="flex justify-center mt-2">
+                {/* <div className="flex justify-center mt-2">
                   <button
                     onClick={() => setIsPlaying(!isPlaying)}
                     className="text-gray-600 hover:text-gray-800 text-sm transition-colors duration-200"
                   >
                     {isPlaying ? "⏸️" : "▶️"} {isPlaying ? "Pause" : "Play"}
                   </button>
-                </div>
+                </div> */}
               </div>
             </div>
 
@@ -273,19 +273,25 @@ const Home: React.FC = () => {
                 <div>
                   <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">
-                      ANJALI
+                      ANJALI <span className="text-gray-800">INFRA</span>
                     </span>
                     <br />
-                    <span className="text-gray-800">INFRA</span>
+                   
                   </h1>
                   <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mt-4"></div>
                 </div>
 
                 {/* About Section */}
                 <div className="space-y-4">
-                  <h2 className="text-xl md:text-2xl font-semibold text-blue-600">
+                  {/* <h2 className="text-xl md:text-2xl font-semibold text-blue-600">
                     About Anjali Infra
-                  </h2>
+                  </h2> */}
+                  <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight 
+               bg-gradient-to-r from-blue-600 via-indigo-500 to-purple-600 
+               bg-clip-text text-transparent 
+               drop-shadow-sm hover:drop-shadow-lg transition-all duration-300">
+  About Anjali Infra
+</h2>
                   <p className="text-gray-700 text-base md:text-lg leading-relaxed max-w-xl">
                     Anjali Infra stands as a beacon of excellence in the
                     construction and infrastructure development industry. With
@@ -297,7 +303,7 @@ const Home: React.FC = () => {
                 </div>
 
                 {/* Owner Information */}
-                <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-lg">
+                {/* <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-lg">
                   <h3 className="text-lg font-semibold text-blue-600 mb-2">
                     Leadership
                   </h3>
@@ -309,28 +315,28 @@ const Home: React.FC = () => {
                     Leading with vision and expertise, driving innovation in
                     every project we undertake.
                   </p>
-                </div>
+                </div> */}
 
                 {/* Call to Action Buttons */}
-                <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                {/* <div className="flex flex-col sm:flex-row gap-4 pt-4">
                   <button className="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white px-8 py-3 rounded-lg font-medium transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
                     View Our Projects
                   </button>
                   <button className="border-2 border-gray-300 hover:border-blue-500 text-gray-700 hover:text-blue-600 px-8 py-3 rounded-lg font-medium transition-all duration-300">
                     Contact Us
                   </button>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
         </div>
 
         {/* Scroll Down Indicator */}
-        {/* <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
           <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
             <div className="w-1 h-3 bg-gray-600 rounded-full mt-2 animate-pulse"></div>
           </div>
-        </div> */}
+        </div>
 
         {/* Service Detail Popups */}
         {activePopup && (
@@ -409,7 +415,7 @@ const Home: React.FC = () => {
                     </div>
 
                     {/* Action Buttons */}
-                    <div className="flex flex-col sm:flex-row gap-4">
+                    {/* <div className="flex flex-col sm:flex-row gap-4">
                       <button
                         className={`flex-1 bg-gradient-to-r ${service.colorTheme.popupGradient} hover:shadow-lg text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105`}
                       >
@@ -418,7 +424,7 @@ const Home: React.FC = () => {
                       <button className="flex-1 border border-gray-300 hover:border-gray-400 text-gray-700 hover:bg-gray-50 px-6 py-3 rounded-lg font-medium transition-all duration-300">
                         Contact Us
                       </button>
-                    </div>
+                    </div> */}
                   </div>
                 ) : null
               )}
@@ -433,7 +439,7 @@ const Home: React.FC = () => {
         className="py-20 bg-gray-50 relative overflow-hidden"
       >
         {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-5">
+        {/* <div className="absolute inset-0 opacity-5">
           <div
             className="absolute inset-0"
             style={{
@@ -441,9 +447,9 @@ const Home: React.FC = () => {
               backgroundSize: "50px 50px",
             }}
           ></div>
-        </div>
+        </div> */}
 
-        <div className=" mx-auto px-5 max-w-7xl relative z-10 pb-12">
+        <div className=" mx-auto px-5 max-w-7xl relative z-10 pb-12 -mt-14">
           {/* Section Header */}
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">

@@ -46,8 +46,8 @@ const ContactUs = () => {
       icon: <MapPin className="w-6 h-6" />,
       title: "Our Address",
       details: [
-        "123 Infrastructure Boulevard",
-        "Tech City, TC 12345",
+        "D.No.47-11-1/11 ,2nd floor, Eswar Arcade, Dwarakanager",
+        "Opp Sriram Finance, Visakhapatnam - 530016",
         "India"
       ],
       color: "blue"
@@ -66,8 +66,7 @@ const ContactUs = () => {
       icon: <Phone className="w-6 h-6" />,
       title: "Call Us",
       details: [
-        "+91 98765 43210",
-        "+91 87654 32109",
+        "+91 80999 66699",
         
       ],
       color: "purple"

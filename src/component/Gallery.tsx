@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { X, ArrowLeft, ArrowRight } from 'lucide-react';
-import {gallery1, gallery2, gallery3} from "../assets/Image";
+import {gallery1, gallery2, gallery3, gallery4, gallery6, gallery8, gallery9, gallery11, gallery12} from "../assets/Image";
 
 interface ImageType {
   src: string;
@@ -26,28 +26,28 @@ const Gallery = () => {
       title: "Creative Space"
     },
     {
-      src: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&h=900&fit=crop",
-      title: "Digital Art"
+      src: gallery4,
+      title: "Tower Erection"
     },
     {
-      src: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=800&fit=crop",
-      title: "Visual Experience"
+      src: gallery6,
+    title: "Civil Structures"
     },
     {
-      src: "https://images.unsplash.com/photo-1558655146-d09347e92766?w=1200&h=800&fit=crop",
-      title: "Brand Design"
+      src: gallery9,
+      title: "Civil Structures"
     },
     {
-      src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=800&fit=crop",
+      src: gallery8,
       title: "Tech Innovation"
     },
     {
-      src: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&h=1100&fit=crop",
-      title: "Code Craft"
+      src: gallery12,
+      title: "BSNL"
     },
     {
-      src: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1200&h=900&fit=crop",
-      title: "Interface Design"
+      src: gallery11,
+      title: "33kv"
     }
   ];
 

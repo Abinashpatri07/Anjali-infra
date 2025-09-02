@@ -26,9 +26,9 @@ const Founder = () => {
             {/* Name Section */}
             <div className="p-6 text-center">
               <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                John Smith
+                Niranjan Mishra
               </h3>
-              <p className="text-gray-600 mb-4">Co-Founder & CEO</p>
+              <p className="text-gray-600 mb-4">Founder</p>
               <p className="text-sm text-gray-500 leading-relaxed">
                 Passionate about innovation and building products that make a difference in people's lives.
               </p>
@@ -49,9 +49,9 @@ const Founder = () => {
             {/* Name Section */}
             <div className="p-6 text-center">
               <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                Alice Davis
+                Soumya Ranjan mishra
               </h3>
-              <p className="text-gray-600 mb-4">Co-Founder & CTO</p>
+              <p className="text-gray-600 mb-4">Co-Founder</p>
               <p className="text-sm text-gray-500 leading-relaxed">
                 Technology enthusiast with a vision for creating scalable solutions and exceptional user experiences.
               </p>
