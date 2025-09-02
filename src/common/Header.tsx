@@ -279,12 +279,7 @@ const Header: React.FC = () => {
 
   // Prevent body scroll when sidebar is open
   useEffect(() => {
-    if (menuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "unset";
-    }
-
+    document.body.style.overflow = menuOpen ? "hidden" : "unset";
     return () => {
       document.body.style.overflow = "unset";
     };
@@ -292,17 +287,16 @@ const Header: React.FC = () => {
 
   return (
     <>
-      <header className="fixed top-0 left-0 w-full z-50 px-5 
+      <header
+        className="fixed top-0 left-0 w-full z-50 px-5 
              bg-gradient-to-b from-slate-900 via-slate-800 to-slate-700 
-             bg-opacity-95 backdrop-blur-md
-             text-white ">
-        {/* Glacial Blue Background Effects */}
+             bg-opacity-95 backdrop-blur-md text-white"
+      >
+        {/* Background Effects */}
         <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/20 via-cyan-400/10 to-indigo-400/20 mix-blend-overlay"></div>
-        {/* <div className="absolute top-0 left-0 w-64 h-32 bg-cyan-200/20 rounded-full blur-2xl"></div>
-        <div className="absolute top-0 right-0 w-48 h-24 bg-sky-200/25 rounded-full blur-xl"></div> */}
-        
+
         <div className="flex items-center justify-between w-full max-w-7xl mx-auto relative">
-          {/* Logo (Left Side) */}
+          {/* Logo */}
           <div className="flex-shrink-0">
             <img
               src={logo3}
@@ -311,49 +305,27 @@ const Header: React.FC = () => {
             />
           </div>
 
-          {/* Center Navigation (Hidden on Mobile) */}
+          {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8 text-sm font-medium">
-            <Link
-              to="/"
-              className="hover:text-blue-400 transition-colors duration-200"
-            >
+            <Link to="/" className="hover:text-blue-400 transition-colors">
               HOME
             </Link>
-            <Link
-              to="/strength"
-              className="hover:text-blue-400 transition-colors duration-200"
-            >
+            <Link to="/strength" className="hover:text-blue-400 transition-colors">
               PROFILE
             </Link>
-            <Link
-              to="/project"
-              className="hover:text-blue-400 transition-colors duration-200"
-            >
+            <Link to="/project" className="hover:text-blue-400 transition-colors">
               PROJECT
             </Link>
-            <Link
-              to="/gallery"
-              className="hover:text-blue-400 transition-colors duration-200"
-            >
+            <Link to="/gallery" className="hover:text-blue-400 transition-colors">
               GALLERY
             </Link>
-            {/* <Link
-              to="/about"
-              className="hover:text-blue-400 transition-colors duration-200"
-            >
-              ABOUT
-            </Link> */}
-            <Link
-              to="/contact"
-              className="hover:text-blue-400 transition-colors duration-200"
-            >
+            <Link to="/contact" className="hover:text-blue-400 transition-colors">
               CONTACT US
             </Link>
           </nav>
 
-          {/* Right Side - Mobile Menu Button Only */}
+          {/* Mobile Menu Button */}
           <div className="flex items-center">
-            {/* Mobile Menu Button */}
             <button
               onClick={() => setMenuOpen(!menuOpen)}
               className="md:hidden text-lg z-50 relative p-2 hover:bg-white rounded-full text-gray-300"
@@ -364,62 +336,61 @@ const Header: React.FC = () => {
         </div>
       </header>
 
-      {/* Backdrop Overlay */}
+      {/* Backdrop */}
       {menuOpen && (
         <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 md:hidden" />
       )}
 
       {/* Mobile Sidebar */}
-      {/* Mobile Sidebar */}
-<div
-  ref={sidebarRef}
-  className={`fixed top-0 right-0 h-full w-80 
+      <div
+        ref={sidebarRef}
+        className={`fixed top-0 right-0 h-full w-80 
               bg-gradient-to-b from-slate-900 via-slate-800 to-slate-700 
               bg-opacity-95 backdrop-blur-md 
               z-50 shadow-2xl md:hidden transform transition-transform duration-300 
               ${menuOpen ? "translate-x-0" : "translate-x-full"}`}
->
-  {/* Glass effect overlays */}
-  <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/20 via-cyan-400/10 to-indigo-400/20 mix-blend-overlay"></div>
-  <div className="absolute top-0 left-0 w-40 h-40 bg-blue-500/30 rounded-full blur-3xl"></div>
-  <div className="absolute bottom-0 right-0 w-32 h-32 bg-indigo-400/30 rounded-full blur-2xl"></div>
+      >
+        {/* Background Effects */}
+        <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/20 via-cyan-400/10 to-indigo-400/20 mix-blend-overlay"></div>
+        <div className="absolute top-0 left-0 w-40 h-40 bg-blue-500/30 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-0 w-32 h-32 bg-indigo-400/30 rounded-full blur-2xl"></div>
 
-  {/* Sidebar Header */}
-  <div className="flex items-center justify-between p-6 border-b border-white/20 relative">
-    <h2 className="text-xl font-bold text-white">Menu</h2>
-    <button
-      onClick={() => setMenuOpen(false)}
-      className="p-2 hover:bg-white/10 rounded-full text-white"
-    >
-      <X className="text-lg" />
-    </button>
-  </div>
+        {/* Sidebar Header */}
+        <div className="flex items-center justify-between p-6 border-b border-white/20 relative">
+          <h2 className="text-xl font-bold text-white">Menu</h2>
+          <button
+            onClick={() => setMenuOpen(false)}
+            className="p-2 hover:bg-white/10 rounded-full text-white"
+          >
+            <X className="text-lg" />
+          </button>
+        </div>
 
-  {/* Navigation Links */}
-  <nav className="px-6 py-8 space-y-6 relative">
-    {[
-      { to: "/", text: "HOME" },
-      { to: "/strength", text: "PROFILE" },
-      { to: "/gallery", text: "GALLERY" },
-      { to: "/project", text: "PROJECT" },
-      { to: "/contact", text: "CONTACT US" },
-    ].map((link) => (
-      <a
-        key={link.text}
-        href={link.to}
-        className="block text-white text-lg font-semibold 
+        {/* Navigation */}
+        <nav className="px-6 py-8 space-y-6 relative">
+          {[
+            { to: "/", text: "HOME" },
+            { to: "/strength", text: "PROFILE" },
+            { to: "/gallery", text: "GALLERY" },
+            { to: "/project", text: "PROJECT" },
+            { to: "/contact", text: "CONTACT US" },
+          ].map((link) => (
+            <Link
+              key={link.text}
+              to={link.to}
+              className="block text-white text-lg font-semibold 
                    hover:text-cyan-300 py-3 px-4 rounded-lg 
                    hover:bg-white/10 border-l-4 border-transparent hover:border-cyan-400"
-        onClick={() => setMenuOpen(false)}
-      >
-        {link.text}
-      </a>
-    ))}
-  </nav>
-</div>
-
+              onClick={() => setMenuOpen(false)}
+            >
+              {link.text}
+            </Link>
+          ))}
+        </nav>
+      </div>
     </>
   );
 };
 
 export default Header;
+
