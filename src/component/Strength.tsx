@@ -149,7 +149,7 @@
 // export default Strength;
 
 import React from "react";
-import { Users, HardHat, Settings, Calculator, Building, Award, FileText, Zap } from "lucide-react";
+import { Users, HardHat, Settings, Calculator, Building, Award, FileText, } from "lucide-react";
 
 const Strength: React.FC = () => {
   const managementTeam = [
@@ -197,12 +197,12 @@ const Strength: React.FC = () => {
       icon: FileText,
       color: "from-green-600 to-emerald-600"
     },
-    {
-      type: "ELECTRICAL 33kv License",
-      number: "A/14348 /2-4555",
-      icon: Zap,
-      color: "from-yellow-600 to-orange-600"
-    },
+    // {
+    //   type: "ELECTRICAL 33kv License",
+    //   number: "A/14348 /2-4555",
+    //   icon: Zap,
+    //   color: "from-yellow-600 to-orange-600"
+    // },
     {
       type: "MSME Registration",
       number: "AP-10-00091170",
@@ -325,7 +325,7 @@ const Strength: React.FC = () => {
             <div className="h-1 w-32 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full mx-auto"></div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 justify-center">
             {registrations.map((reg, index) => {
               const IconComponent = reg.icon;
               return (

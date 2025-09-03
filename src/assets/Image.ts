@@ -2,7 +2,7 @@ import img from "./12307.jpg"
 import img2 from "./51099.jpg"
 import img3 from "./2210.i518.041.S.m005.c13.communication towers illustration.jpg"
 
-import logo3 from "./WhatsApp logo.jpg"
+import logo3 from "./logo5-Photoroom.png"
 import gallery1 from "./gallery1.png"
 import gallery2 from "./gallery2.png"
 import gallery3 from "./gallery3.png"

@@ -56,8 +56,7 @@ const ContactUs = () => {
       icon: <Mail className="w-6 h-6" />,
       title: "Email Us",
       details: [
-        "info@company.com",
-        "projects@company.com",
+        "mishra.niranjan@anjaliinfra.in",
         
       ],
       color: "emerald"
@@ -98,15 +97,16 @@ const ContactUs = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white overflow-hidden">
       {/* Hero Section */}
       <div className="relative py-12 px-6 text-center bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-6xl mx-auto">
           {/* Main Title */}
           <div className="relative mb-6">
-            <h1 className="text-6xl md:text-[8rem] lg:text-[10rem] font-black text-gray-100 leading-none tracking-tighter select-none">
+            <h1 className="text-4xl sm:text-5xl md:text-[6rem] lg:text-[8rem] font-black text-gray-100 leading-none tracking-tighter select-none">
               CONTACT
             </h1>
+
             <div className="absolute inset-0 flex items-center justify-center">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-light bg-gradient-to-r from-blue-600 via-purple-600 to-emerald-600 bg-clip-text text-transparent tracking-[0.3em]">
                 GET IN TOUCH

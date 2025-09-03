@@ -148,7 +148,7 @@ const Footer: React.FC = () => {
             <div className="flex items-center space-x-3">
               <Phone className="text-cyan-300 flex-shrink-0" size={16} />
               <a href="tel:+918099966699" className="text-slate-200 hover:text-cyan-300 transition-colors duration-200 text-sm">
-                +91 8099966699
+                +91 80999 66699
               </a>
             </div>
 
@@ -156,7 +156,7 @@ const Footer: React.FC = () => {
             <div className="flex items-center space-x-3">
               <Mail className="text-cyan-300 flex-shrink-0" size={16} />
               <a href="mailto:info@aianjailiinfra.com" className="text-slate-200 hover:text-cyan-300 transition-colors duration-200 text-sm">
-                info@aianjailiinfra.com
+                mishra.niranjan@anjaliinfra.in
               </a>
             </div>
           </div>
