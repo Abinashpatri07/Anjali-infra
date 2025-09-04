@@ -154,7 +154,7 @@ import { Users, HardHat, Settings, Calculator, Building, Award, FileText, } from
 const Strength: React.FC = () => {
   const managementTeam = [
     {
-      names: ["N. Mishra", "S.R Mishra", "Rashmita Mishra"],
+      names: ["Niranjan Mishra", "Soumya Ranjan Mishra", "Rashmita Mishra"],
       role: "Founders & Partners",
       icon: Users,
       color: "from-blue-600 to-purple-600",

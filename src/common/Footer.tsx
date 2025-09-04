@@ -117,6 +117,7 @@
 
 import React from "react";
 import { MapPin, Mail, Phone, Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
+import { Link } from "react-router-dom"
 
 const Footer: React.FC = () => {
   return (
@@ -162,16 +163,16 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Quick Links */}
-          <div className="space-y-4">
-            <h4 className="text-lg font-semibold text-cyan-300">Quick Links</h4>
-            <div className="flex flex-col space-y-2">
-              <a href="/" className="text-slate-200 hover:text-cyan-300 text-sm">Home</a>
-              <a href="/strength" className="text-slate-200 hover:text-cyan-300 text-sm">Profile</a>
-              <a href="/gallery" className="text-slate-200 hover:text-cyan-300 text-sm">Gallery</a>
-              <a href="/project" className="text-slate-200 hover:text-cyan-300 text-sm">Project</a>
-              <a href="/contact" className="text-slate-200 hover:text-cyan-300 text-sm">Contact Us</a>
-            </div>
+         <div className="space-y-4">
+          <h4 className="text-lg font-semibold text-cyan-300">Quick Links</h4>
+          <div className="flex flex-col space-y-2">
+            <Link to="/" className="text-slate-200 hover:text-cyan-300 text-sm">Home</Link>
+            <Link to="/strength" className="text-slate-200 hover:text-cyan-300 text-sm">Profile</Link>
+            <Link to="/gallery" className="text-slate-200 hover:text-cyan-300 text-sm">Gallery</Link>
+            <Link to="/project" className="text-slate-200 hover:text-cyan-300 text-sm">Project</Link>
+            <Link to="/contact" className="text-slate-200 hover:text-cyan-300 text-sm">Contact Us</Link>
           </div>
+        </div>
 
           {/* Services Section - moved here */}
           <div className="space-y-4">
