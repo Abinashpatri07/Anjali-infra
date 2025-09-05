@@ -12,6 +12,9 @@ import gallery9 from "./gallery5.png"
 import gallery8 from "./gallery6.jpg"
 import gallery12 from "./gallery3.png"
 import gallery11 from "./gallery3.png"
+import partener1 from "./partener1.jpeg"
+import partener2 from "./download.png"
+import partener3 from "./Bsnl logo.png"
 
 
-export {img, img2, img3, logo3, gallery1, gallery2, gallery3, gallery4, gallery6, gallery9, gallery8, gallery12, gallery11};
+export {img, img2, img3, logo3, gallery1, gallery2, gallery3, gallery4, gallery6, gallery9, gallery8, gallery12, gallery11, partener1, partener2, partener3};

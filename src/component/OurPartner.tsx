@@ -1,23 +1,23 @@
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-
+import {partener1, partener2, partener3} from "../assets/Image"
 const OurPartner = () => {
   // Partner data with actual logo image links
   const partners = [
     {
       id: 1,
       name: "Reliance Jio",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/2/20/Reliance_Jio_Logo.svg",
+      logo: partener2,
     },
     {
       id: 2,
       name: "APEPDCL",
-      logo: "https://apepdcl.in/Images/logo.png", // official logo image
+      logo: partener1, // official logo image
     },
     {
       id: 3,
       name: "IRP Infra - AP (BSNL)",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/b/b6/BSNL_logo.svg",
+      logo: partener3,
     },
   ];
 
@@ -156,10 +156,11 @@ const OurPartner = () => {
                       src={partner.logo}
                       alt={`${partner.name} logo`}
                       className={`max-w-full object-contain transition-all duration-500 ${
-                        isInCenter(index)
-                          ? "max-h-20 filter-none drop-shadow-lg"
-                          : "max-h-16 filter grayscale group-hover:grayscale-0"
-                      }`}
+                      isInCenter(index)
+                        ? "max-h-20 drop-shadow-lg"
+                        : "max-h-16"
+                    }`}
+
                       onError={(e) => {
                         const event = e.target as HTMLImageElement;
                         event.src = `data:image/svg+xml;base64,${btoa(`
