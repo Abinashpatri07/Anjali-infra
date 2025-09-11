@@ -8,8 +8,6 @@
 //   const [isPlaying] = useState(true);
 //   const [activePopup, setActivePopup] = useState<number | null>(null);
 
-
-
 //   const slides = [
 //     { src: img  },
 //     { src: img2 },
@@ -26,7 +24,6 @@
 
 //     return () => clearInterval(interval);
 //   }, [isPlaying, slides.length]);
-
 
 //   const nextSlide = () => {
 //     setCurrentSlide((prev) => (prev + 1) % slides.length);
@@ -256,7 +253,7 @@
 //                     ANJALI <span className="text-gray-800">INFRA</span>
 //                   </span>
 //                   <br />
-                 
+
 //                 </h1>
 //                <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-6"></div>
 //               </div>
@@ -522,20 +519,14 @@
 import React, { useState, useEffect } from "react";
 import Founder from "./Founder";
 import OurPartner from "./OurPartner";
-import {img, img2, img3} from "../assets/Image"
+import { img, img2, img3 } from "../assets/Image";
 
 const Home: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPlaying] = useState(true);
   const [activePopup, setActivePopup] = useState<number | null>(null);
 
-
-
-  const slides = [
-    { src: img  },
-    { src: img2 },
-    { src: img3 },
-  ];
+  const slides = [{ src: img }, { src: img2 }, { src: img3 }];
 
   // Auto-play functionality
   useEffect(() => {
@@ -547,7 +538,6 @@ const Home: React.FC = () => {
 
     return () => clearInterval(interval);
   }, [isPlaying, slides.length]);
-
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % slides.length);
@@ -583,7 +573,8 @@ const Home: React.FC = () => {
         hoverGradient: "group-hover:from-blue-200 group-hover:to-cyan-200",
         textColor: "text-blue-600",
         hoverTextColor: "group-hover:text-blue-700",
-        buttonGradient: "from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600",
+        buttonGradient:
+          "from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600",
         buttonBorder: "border-blue-300 hover:border-blue-400",
         buttonText: "text-white",
         popupGradient: "from-blue-500 to-cyan-500",
@@ -626,7 +617,8 @@ const Home: React.FC = () => {
         hoverGradient: "group-hover:from-yellow-200 group-hover:to-orange-200",
         textColor: "text-yellow-600",
         hoverTextColor: "group-hover:text-yellow-700",
-        buttonGradient: "from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600",
+        buttonGradient:
+          "from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600",
         buttonBorder: "border-yellow-300 hover:border-yellow-400",
         buttonText: "text-white",
         popupGradient: "from-yellow-500 to-orange-500",
@@ -669,7 +661,8 @@ const Home: React.FC = () => {
         hoverGradient: "group-hover:from-green-200 group-hover:to-emerald-200",
         textColor: "text-green-600",
         hoverTextColor: "group-hover:text-green-700",
-        buttonGradient: "from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600",
+        buttonGradient:
+          "from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600",
         buttonBorder: "border-green-300 hover:border-green-400",
         buttonText: "text-white",
         popupGradient: "from-green-500 to-emerald-500",
@@ -701,10 +694,7 @@ const Home: React.FC = () => {
   return (
     <>
       {/* Hero Section */}
-      <section
-        id="home"
-        className="relative flex flex-col bg-gray-50 mt-3"
-      >
+      <section id="home" className="relative flex flex-col bg-gray-50 mt-3">
         {/* Left Side - Full Screen Width Image Carousel */}
         <div className="w-full mt-10">
           <div className="relative bg-white shadow-xl p-3 md:p-6 border border-gray-200">
@@ -762,20 +752,18 @@ const Home: React.FC = () => {
                     ANJALI <span className="text-gray-800">INFRA</span>
                   </span>
                   <br />
-                 
                 </h1>
-               <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-4 md:mb-6"></div>
+                <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-4 md:mb-6"></div>
               </div>
 
               {/* About Section */}
               <div className="space-y-4">
-                <p className="text-gray-700 text-sm md:text-lg leading-relaxed max-w-xl mx-auto">
+                <p className="text-gray-600 text-sm md:text-lg max-w-3xl mx-auto leading-relaxed">
                   Anjali Infra stands as a beacon of excellence in the
                   construction and infrastructure development industry. With
                   years of experience and unwavering commitment to quality, we
-                  transform visions into reality through innovative
-                  engineering solutions and sustainable construction
-                  practices.
+                  transform visions into reality through innovative engineering
+                  solutions and sustainable construction practices.
                 </p>
               </div>
             </div>
@@ -870,7 +858,6 @@ const Home: React.FC = () => {
         id="services"
         className="py-10 md:py-20 bg-gray-50 relative overflow-hidden"
       >
-
         <div className="mx-auto px-3 md:px-5 max-w-7xl relative z-10 pb-12 -mt-12">
           {/* Section Header */}
           <div className="text-center mb-8 md:mb-16">
@@ -1016,8 +1003,8 @@ const Home: React.FC = () => {
         </div>
 
         {/* Placeholder sections for Founder and Partners */}
-         <Founder />
-         <OurPartner />
+        <Founder />
+        <OurPartner />
       </section>
     </>
   );
