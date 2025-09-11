@@ -6,6 +6,7 @@ import Strength from "./component/Strength"
 import Gallery from "./component/Gallery"
 import Projects from "./component/Projects"
 import ContactUs from "./component/ContactUs"
+import AdmindashBoard from "./component/AdmindashBoard"
 import ScrollToTop from "./common/ScrollToTop"   // ✅ import it
 
 const App = () => {
@@ -23,6 +24,7 @@ const App = () => {
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/project" element={<Projects />} />
         <Route path="/contact" element={<ContactUs />} />
+        <Route path="/anjaliinfra/admin/dashboard" element={<AdmindashBoard/>}/>
       </Routes>
 
       <Footer />

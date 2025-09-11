@@ -32,6 +32,8 @@ const ContactUs = () => {
     }
     
     setIsSubmitting(true);
+
+    console.log(formData)
     
     // Simulate form submission
     setTimeout(() => {

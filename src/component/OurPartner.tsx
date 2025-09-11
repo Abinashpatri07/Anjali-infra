@@ -1,28 +1,32 @@
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import {partener1, partener2, partener3} from "../assets/Image"
 const OurPartner = () => {
   // Partner data with actual logo image links
-  const partners = [
-    {
-      id: 1,
-      name: "Reliance Jio",
-      logo: partener2,
-    },
-    {
-      id: 2,
-      name: "APEPDCL",
-      logo: partener1, // official logo image
-    },
-    {
-      id: 3,
-      name: "IRP Infra - AP (BSNL)",
-      logo: partener3,
-    },
-  ];
 
+  const [partners, setPartners] = useState<Array<FileItem>>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [itemsPerView, setItemsPerView] = useState(3);
+
+
+useEffect(() => {
+    const fetchUploadedImages = async () => {
+      try {
+        const response = await fetch('http://localhost:5000/api/admin/company-images');
+        if (response.ok) {
+          const result = await response.json();
+          if (result.data && result.data.files) {
+            setPartners(result.data.files);
+          }
+        }
+      } catch (error) {
+        console.error('Error fetching uploaded images:', error);
+      }
+    };
+  
+    fetchUploadedImages();
+    }, []);
+
+
 
   // Auto-scroll functionality
   useEffect(() => {
@@ -153,8 +157,8 @@ const OurPartner = () => {
                                 }`}
                   >
                     <img
-                      src={partner.logo}
-                      alt={`${partner.name} logo`}
+                      src={partner.url}
+                      alt={`${partner.filename} logo`}
                       className={`max-w-full object-contain transition-all duration-500 ${
                       isInCenter(index)
                         ? "max-h-20 drop-shadow-lg"
@@ -166,7 +170,7 @@ const OurPartner = () => {
                         event.src = `data:image/svg+xml;base64,${btoa(`
                           <svg width="120" height="60" xmlns="http://www.w3.org/2000/svg">
                             <rect width="120" height="60" fill="#f3f4f6" stroke="#d1d5db" stroke-width="1"/>
-                            <text x="60" y="35" font-family="Arial" font-size="12" text-anchor="middle" fill="#6b7280">${partner.name}</text>
+                            <text x="60" y="35" font-family="Arial" font-size="12" text-anchor="middle" fill="#6b7280">${partner.filename}</text>
                           </svg>
                         `)}`;
                       }}
