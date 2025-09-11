@@ -11,7 +11,7 @@ const OurPartner = () => {
 useEffect(() => {
     const fetchUploadedImages = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/admin/company-images');
+        const response = await fetch('https://anjaliinfraservice.onrender.com/api/admin/company-images');
         if (response.ok) {
           const result = await response.json();
           if (result.data && result.data.files) {
