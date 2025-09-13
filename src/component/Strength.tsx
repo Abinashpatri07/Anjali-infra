@@ -355,29 +355,29 @@ const Strength: React.FC = () => {
         </div>
 
         {/* Statistics Section */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-          {[
-            { number: "25+", label: "Team Members", color: "text-blue-600" },
-            { number: "5+", label: "Specializations", color: "text-purple-600" },
-            { number: "100%", label: "Dedication", color: "text-emerald-600" },
-            { number: "24/7", label: "Support", color: "text-orange-600" }
-          ].map((stat, index) => (
-            <div 
-              key={index}
-              className="text-center group cursor-pointer"
-              style={{ animationDelay: `${index * 200}ms` }}
-            >
-              <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 border border-slate-100">
-                <div className={`text-3xl md:text-4xl font-bold ${stat.color} mb-2 group-hover:scale-110 transition-transform duration-300`}>
-                  {stat.number}
-                </div>
-                <div className="text-slate-600 font-medium text-sm uppercase tracking-wider">
-                  {stat.label}
-                </div>
-              </div>
-            </div>
-          ))}
+       <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
+  {[
+    { number: "25+", label: "Team Members", color: "text-blue-600" },
+    { number: "5+", label: "Specializations", color: "text-purple-600" },
+    { number: "100%", label: "Dedication", color: "text-emerald-600" },
+  ].map((stat, index) => (
+    <div 
+      key={index}
+      className="text-center group cursor-pointer"
+      style={{ animationDelay: `${index * 200}ms` }}
+    >
+      <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 border border-slate-100">
+        <div className={`text-3xl md:text-4xl font-bold ${stat.color} mb-2 group-hover:scale-110 transition-transform duration-300`}>
+          {stat.number}
         </div>
+        <div className="text-slate-600 font-medium text-sm uppercase tracking-wider">
+          {stat.label}
+        </div>
+      </div>
+    </div>
+  ))}
+</div>
+
 
         {/* Decorative Elements */}
         <div className="absolute top-10 left-10 w-32 h-32 bg-blue-200/20 rounded-full blur-3xl"></div>
