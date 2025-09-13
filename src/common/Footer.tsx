@@ -14,7 +14,38 @@ const Footer: React.FC = () => {
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           
-          {/* Contact Information */}
+          {/* Services Section - moved here */}
+          <div className="space-y-4">
+            <h4 className="text-lg font-semibold text-cyan-300">Our Services</h4>
+            <div className="grid grid-cols-1 gap-2">
+              <span className="text-slate-200 text-sm bg-slate-800/30 backdrop-blur-sm rounded-lg px-4 py-2 border border-slate-600/30">
+                Construction
+              </span>
+              <span className="text-slate-200 text-sm bg-slate-800/30 backdrop-blur-sm rounded-lg px-4 py-2 border border-slate-600/30">
+                Infrastructure Development
+              </span>
+              <span className="text-slate-200 text-sm bg-slate-800/30 backdrop-blur-sm rounded-lg px-4 py-2 border border-slate-600/30">
+                Project Management
+              </span>
+              <span className="text-slate-200 text-sm bg-slate-800/30 backdrop-blur-sm rounded-lg px-4 py-2 border border-slate-600/30">
+                Electrical Services
+              </span>
+            </div>
+          </div>
+
+          {/* Quick Links */}
+         <div className="space-y-4 text-left md:text-center">
+          <h4 className="text-lg font-semibold text-cyan-300">Quick Links</h4>
+          <div className="flex flex-col space-y-2">
+            <Link to="/" className="text-slate-200 hover:text-cyan-300 text-sm">Home</Link>
+            <Link to="/strength" className="text-slate-200 hover:text-cyan-300 text-sm">Profile</Link>
+            <Link to="/gallery" className="text-slate-200 hover:text-cyan-300 text-sm">Gallery</Link>
+            <Link to="/project" className="text-slate-200 hover:text-cyan-300 text-sm">Project</Link>
+            <Link to="/contact" className="text-slate-200 hover:text-cyan-300 text-sm">Contact Us</Link>
+          </div>
+        </div>
+
+           {/* Contact Information */}
           <div className="space-y-4">
             <h4 className="text-lg font-semibold text-cyan-300">Contact Info</h4>
             
@@ -42,37 +73,6 @@ const Footer: React.FC = () => {
               <a href="mailto:info@aianjailiinfra.com" className="text-slate-200 hover:text-cyan-300 transition-colors duration-200 text-sm">
                 mishra.niranjan@anjaliinfra.in
               </a>
-            </div>
-          </div>
-
-          {/* Quick Links */}
-         <div className="space-y-4 text-left md:text-center">
-          <h4 className="text-lg font-semibold text-cyan-300">Quick Links</h4>
-          <div className="flex flex-col space-y-2">
-            <Link to="/" className="text-slate-200 hover:text-cyan-300 text-sm">Home</Link>
-            <Link to="/strength" className="text-slate-200 hover:text-cyan-300 text-sm">Profile</Link>
-            <Link to="/gallery" className="text-slate-200 hover:text-cyan-300 text-sm">Gallery</Link>
-            <Link to="/project" className="text-slate-200 hover:text-cyan-300 text-sm">Project</Link>
-            <Link to="/contact" className="text-slate-200 hover:text-cyan-300 text-sm">Contact Us</Link>
-          </div>
-        </div>
-
-          {/* Services Section - moved here */}
-          <div className="space-y-4">
-            <h4 className="text-lg font-semibold text-cyan-300">Our Services</h4>
-            <div className="grid grid-cols-1 gap-2">
-              <span className="text-slate-200 text-sm bg-slate-800/30 backdrop-blur-sm rounded-lg px-4 py-2 border border-slate-600/30">
-                Construction
-              </span>
-              <span className="text-slate-200 text-sm bg-slate-800/30 backdrop-blur-sm rounded-lg px-4 py-2 border border-slate-600/30">
-                Infrastructure Development
-              </span>
-              <span className="text-slate-200 text-sm bg-slate-800/30 backdrop-blur-sm rounded-lg px-4 py-2 border border-slate-600/30">
-                Project Management
-              </span>
-              <span className="text-slate-200 text-sm bg-slate-800/30 backdrop-blur-sm rounded-lg px-4 py-2 border border-slate-600/30">
-                Electrical Services
-              </span>
             </div>
           </div>
         </div>
