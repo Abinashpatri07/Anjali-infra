@@ -47,7 +47,8 @@ const Header: React.FC = () => {
         {/* Background Effects */}
         <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/20 via-cyan-400/10 to-indigo-400/20 mix-blend-overlay"></div>
 
-        <div className="flex items-center justify-between w-full max-w-7xl mx-auto relative">
+        <div className="flex items-center justify-between w-full max-w-7xl mx-auto relative pl-4 md:pl-8">
+
           {/* Logo */}
           <div className="flex-shrink-0">
             <img
