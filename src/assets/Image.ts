@@ -16,7 +16,8 @@ import partener1 from "./partener1.jpeg"
 import partener2 from "./download.png"
 import partener3 from "./Bsnl logo.png"
 import founder1 from "./founder1.jpg"
-
+import founder2 from "./founder2.png"
+2
 
 export {img, img2, img3, logo3, gallery1, gallery2, gallery3, gallery4, gallery6, gallery9, 
-    gallery8, gallery12, gallery11, partener1, partener2, partener3, founder1};
+    gallery8, gallery12, gallery11, partener1, partener2, partener3, founder1, founder2};

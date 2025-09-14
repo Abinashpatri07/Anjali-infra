@@ -175,14 +175,14 @@ const Strength: React.FC = () => {
       description: "Managing and executing complex projects"
     },
     {
-      names: ["N. Ganesh"],
+      names: ["B Ganesh"],
       role: "Electrical Engineer",
       icon: Building,
       color: "from-indigo-600 to-blue-600",
       description: "Structural design and electrical engineering expertise"
     },
     {
-      names: ["D. Chandu"],
+      names: ["D Chandu"],
       role: "Accountant",
       icon: Calculator,
       color: "from-green-600 to-emerald-600",

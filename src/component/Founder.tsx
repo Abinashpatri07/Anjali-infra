@@ -1,71 +1,4 @@
-// const Founder = () => {
-//   return (
-//     <div className=" bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-//       <div className="max-w-7xl mx-auto">
-//         <div className="text-center mb-12">
-//           <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
-//             Meet Our Founders
-//           </h2>
-//           <p className="mt-4 text-lg text-gray-600">
-//             The visionaries behind our company
-//           </p>
-//         </div>
-        
-//         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-//           {/* Founder Card 1 */}
-//           <div className="bg-white rounded-lg shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
-//             {/* Image Section */}
-//             <div className="h-64 bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center">
-//               <div className="w-32 h-32 bg-white rounded-full flex items-center justify-center shadow-lg">
-//                 <div className="w-24 h-24 bg-blue-500 rounded-full flex items-center justify-center">
-//                   <span className="text-white text-2xl font-bold">JS</span>
-//                 </div>
-//               </div>
-//             </div>
-            
-//             {/* Name Section */}
-//             <div className="p-6 text-center">
-//               <h3 className="text-xl font-semibold text-gray-900 mb-2">
-//                 Niranjan Mishra
-//               </h3>
-//               <p className="text-gray-600 mb-4">Founder</p>
-//               <p className="text-sm text-gray-500 leading-relaxed">
-//                 Passionate about innovation and building products that make a difference in people's lives.
-//               </p>
-//             </div>
-//           </div>
-
-//           {/* Founder Card 2 */}
-//           <div className="bg-white rounded-lg shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
-//             {/* Image Section */}
-//             <div className="h-64 bg-gradient-to-br from-green-400 to-blue-500 flex items-center justify-center">
-//               <div className="w-32 h-32 bg-white rounded-full flex items-center justify-center shadow-lg">
-//                 <div className="w-24 h-24 bg-green-500 rounded-full flex items-center justify-center">
-//                   <span className="text-white text-2xl font-bold">AD</span>
-//                 </div>
-//               </div>
-//             </div>
-            
-//             {/* Name Section */}
-//             <div className="p-6 text-center">
-//               <h3 className="text-xl font-semibold text-gray-900 mb-2">
-//                 Soumya Ranjan mishra
-//               </h3>
-//               <p className="text-gray-600 mb-4">Co-Founder</p>
-//               <p className="text-sm text-gray-500 leading-relaxed">
-//                 Technology enthusiast with a vision for creating scalable solutions and exceptional user experiences.
-//               </p>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Founder;
-
-import { founder1 } from "../assets/Image"; // Import your images
+import { founder1, founder2 } from "../assets/Image"; // Import your images
 
 const Founder = () => {
   return (
@@ -121,9 +54,9 @@ const Founder = () => {
                     <div className="inline-block px-4 py-2 bg-gradient-to-r from-blue-500 to-cyan-500 text-white text-sm font-semibold rounded-full mb-4 shadow-lg">
                       Founder
                     </div>
-                    <p className="text-gray-600 leading-relaxed text-base">
+                    {/* <p className="text-gray-600 leading-relaxed text-base">
                       Passionate about innovation and building products that make a difference in people's lives.
-                    </p>
+                    </p> */}
                     
                     {/* Decorative Bottom Line */}
                     <div className="w-16 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mt-6 rounded-full"></div>
@@ -143,7 +76,7 @@ const Founder = () => {
                 <div className="relative h-64 overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-t from-green-600/20 via-transparent to-blue-600/20"></div>
                   <img 
-                    src={founder1} 
+                    src={founder2} 
                     alt="Soumya Ranjan Mishra"
                     className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110"
                   />
@@ -164,9 +97,9 @@ const Founder = () => {
                     <div className="inline-block px-4 py-2 bg-gradient-to-r from-green-500 to-blue-500 text-white text-sm font-semibold rounded-full mb-4 shadow-lg">
                       Co-Founder
                     </div>
-                    <p className="text-gray-600 leading-relaxed text-base">
+                    {/* <p className="text-gray-600 leading-relaxed text-base">
                       Technology enthusiast with a vision for creating scalable solutions and exceptional user experiences.
-                    </p>
+                    </p> */}
                     
                     {/* Decorative Bottom Line */}
                     <div className="w-16 h-1 bg-gradient-to-r from-green-500 to-blue-500 mx-auto mt-6 rounded-full"></div>

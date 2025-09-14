@@ -98,7 +98,7 @@ const Footer: React.FC = () => {
                 <a href="#" className="text-slate-400 hover:text-cyan-300 transition-all duration-200 transform hover:scale-110">
                   <Linkedin size={18} />
                 </a>
-                <a href="#" className="text-slate-400 hover:text-cyan-300 transition-all duration-200 transform hover:scale-110">
+                <a href="https://share.google/983vCpJKLLFNHtz9v" className="text-slate-400 hover:text-cyan-300 transition-all duration-200 transform hover:scale-110">
                   <Twitter size={18} />
                 </a>
               </div>
