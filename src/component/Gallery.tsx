@@ -233,7 +233,7 @@ const Gallery = () => {
 
           {/* Image container */}
           <div
-            className="relative max-w-[85vw] max-h-[85vh] mx-auto shadow-2xl"
+            className="relative w-full h-full flex items-center justify-center"
             onClick={(e) => e.stopPropagation()}
           >
             <img
