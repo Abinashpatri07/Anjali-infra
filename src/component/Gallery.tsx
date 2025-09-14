@@ -1,6 +1,18 @@
-import { useState } from 'react';
-import { X, ArrowLeft, ArrowRight } from 'lucide-react';
-import {gallery1, gallery2, gallery3, gallery4, gallery6, gallery8, gallery9, gallery11, gallery12} from "../assets/Image";
+import { useState } from "react";
+import { X, ArrowLeft, ArrowRight } from "lucide-react";
+import {
+  gallery1,
+  gallery2,
+  gallery3,
+  gallery4,
+  gallery6,
+  gallery8,
+  gallery9,
+  gallery11,
+  gallery12,
+  gallery15,
+  gallery17,
+} from "../assets/Image";
 
 interface ImageType {
   src: string;
@@ -15,64 +27,72 @@ const Gallery = () => {
   const images = [
     {
       src: gallery1,
-      title: "Modern Architecture"
+      title: "Modern Architecture",
     },
     {
       src: gallery2,
-      title: "Urban Design"
+      title: "Urban Design",
     },
     {
       src: gallery3,
-      title: "Creative Space"
+      title: "Creative Space",
     },
     {
       src: gallery4,
-      title: "Tower Erection"
+      title: "Tower Erection",
+    },
+    {
+      src: gallery15,
+      title: "Tower Erection",
     },
     {
       src: gallery6,
-    title: "Civil Structures"
+      title: "Civil Structures",
     },
     {
       src: gallery9,
-      title: "Civil Structures"
+      title: "Civil Structures",
     },
     {
       src: gallery8,
-      title: "Tech Innovation"
+      title: "Tech Innovation",
+    },
+    {
+      src: gallery17,
+      title: "Tech Innovation",
     },
     {
       src: gallery12,
-      title: "BSNL"
+      title: "BSNL",
     },
     {
       src: gallery11,
-      title: "33kv"
-    }
+      title: "33kv",
+    },
   ];
 
   const openModal = (image: ImageType, index: number) => {
     setSelectedImage({ ...image, index });
-    document.body.style.overflow = 'hidden';
+    document.body.style.overflow = "hidden";
   };
 
   const closeModal = () => {
     setSelectedImage(null);
-    document.body.style.overflow = 'unset';
+    document.body.style.overflow = "unset";
   };
 
   const navigateImage = (direction: string) => {
     if (!selectedImage || selectedImage.index === undefined) return;
-    
+
     const currentIndex = selectedImage.index;
     let newIndex: number;
-    
-    if (direction === 'next') {
+
+    if (direction === "next") {
       newIndex = currentIndex === images.length - 1 ? 0 : currentIndex + 1;
     } else {
       newIndex = currentIndex === 0 ? images.length - 1 : currentIndex - 1;
     }
-    
+
     setSelectedImage({ ...images[newIndex], index: newIndex });
   };
 
@@ -81,36 +101,41 @@ const Gallery = () => {
       {/* Hero Section */}
       <div className="relative py-20 px-6 text-center">
         <div className="max-w-6xl mx-auto">
-  {/* Main Title */}
-  <div className="relative mb-2"> {/* reduced mb-5 → mb-2 */}
-    <h1 className="text-7xl md:text-[10rem] lg:text-[12rem] font-black text-gray-100 leading-none tracking-tighter select-none">
-      WORK
-    </h1>
-    <div className="absolute inset-0 flex items-center justify-center">
-      <h2 className="text-3xl md:text-5xl lg:text-6xl font-light text-gray-900 tracking-[0.2em]">
-        SERVICE
-      </h2>
-    </div>
-  </div>
+          {/* Main Title */}
+          <div className="relative mb-2">
+            {" "}
+            {/* reduced mb-5 → mb-2 */}
+            <h1 className="text-7xl md:text-[10rem] lg:text-[12rem] font-black text-gray-100 leading-none tracking-tighter select-none">
+              WORK
+            </h1>
+            <div className="absolute inset-0 flex items-center justify-center">
+              <h2 className="text-3xl md:text-5xl lg:text-6xl font-light text-gray-900 tracking-[0.2em]">
+                SERVICE
+              </h2>
+            </div>
+          </div>
 
-  {/* Subtitle */}
-  <div className="space-y-2"> {/* reduced space-y-4 → space-y-2 */}
-    <p className="text-lg md:text-xl text-gray-600 font-light tracking-wider">
-      A CURATED COLLECTION OF
-    </p>
-    <p className="text-xl md:text-2xl text-gray-900 font-medium tracking-wide">
-      Creative Excellence
-    </p>
-  </div>
+          {/* Subtitle */}
+          <div className="space-y-2">
+            {" "}
+            {/* reduced space-y-4 → space-y-2 */}
+            <p className="text-lg md:text-xl text-gray-600 font-light tracking-wider">
+              A CURATED COLLECTION OF
+            </p>
+            <p className="text-xl md:text-2xl text-gray-900 font-medium tracking-wide">
+              Creative Excellence
+            </p>
+          </div>
 
-  {/* Decorative elements */}
-  <div className="mt-6 flex items-center justify-center space-x-6"> {/* reduced mt-12 → mt-6, space-x-8 → space-x-6 */}
-    <div className="h-px w-12 bg-gradient-to-r from-transparent to-gray-300"></div>
-    <div className="w-2 h-2 bg-gray-900 transform rotate-45"></div>
-    <div className="h-px w-12 bg-gradient-to-l from-transparent to-gray-300"></div>
-  </div>
-</div>
-
+          {/* Decorative elements */}
+          <div className="mt-6 flex items-center justify-center space-x-6">
+            {" "}
+            {/* reduced mt-12 → mt-6, space-x-8 → space-x-6 */}
+            <div className="h-px w-12 bg-gradient-to-r from-transparent to-gray-300"></div>
+            <div className="w-2 h-2 bg-gray-900 transform rotate-45"></div>
+            <div className="h-px w-12 bg-gradient-to-l from-transparent to-gray-300"></div>
+          </div>
+        </div>
       </div>
 
       {/* Gallery Grid */}
@@ -124,17 +149,17 @@ const Gallery = () => {
                 onClick={() => openModal(image, index)}
                 style={{
                   animationDelay: `${index * 100}ms`,
-                  animation: 'fadeInScale 0.8s ease-out forwards',
-                  opacity: 0
+                  animation: "fadeInScale 0.8s ease-out forwards",
+                  opacity: 0,
                 }}
               >
                 <div className="relative aspect-square overflow-hidden bg-gray-50 shadow-lg shadow-blue-200/50 group-hover:shadow-2xl group-hover:shadow-blue-400/60 transition-all duration-500">
                   <img
                     src={image.src}
                     alt={image.title}
-                    className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105 grayscale group-hover:grayscale-0"
+                    className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
                   />
-                  
+
                   {/* Overlay */}
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-500 flex items-center justify-center">
                     <div className="transform scale-0 group-hover:scale-100 transition-transform duration-300 delay-100">
@@ -160,7 +185,7 @@ const Gallery = () => {
 
                 {/* Number indicator */}
                 <div className="absolute -top-4 -right-4 w-8 h-8 bg-blue-600 text-white text-sm font-bold rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200 shadow-lg shadow-blue-500/50">
-                  {String(index + 1).padStart(2, '0')}
+                  {String(index + 1).padStart(2, "0")}
                 </div>
               </div>
             ))}
@@ -193,27 +218,30 @@ const Gallery = () => {
 
           {/* Navigation */}
           <button
-            onClick={() => navigateImage('prev')}
+            onClick={() => navigateImage("prev")}
             className="absolute left-8 z-10 p-4 bg-gray-900 text-white rounded-full hover:bg-gray-800 transition-all duration-300 hover:scale-110"
           >
             <ArrowLeft size={24} />
           </button>
-          
+
           <button
-            onClick={() => navigateImage('next')}
+            onClick={() => navigateImage("next")}
             className="absolute right-8 z-10 p-4 bg-gray-900 text-white rounded-full hover:bg-gray-800 transition-all duration-300 hover:scale-110"
           >
             <ArrowRight size={24} />
           </button>
 
           {/* Image container */}
-          <div className="relative max-w-[85vw] max-h-[85vh] mx-auto shadow-2xl" onClick={(e) => e.stopPropagation()}>
+          <div
+            className="relative max-w-[85vw] max-h-[85vh] mx-auto shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
             <img
               src={selectedImage.src}
               alt={selectedImage.title}
               className="max-w-full max-h-full object-contain"
             />
-            
+
             {/* Image info */}
             <div className="absolute bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm p-6 border-t border-gray-200">
               <div className="flex items-center justify-between">
@@ -224,7 +252,8 @@ const Gallery = () => {
                   <div className="w-12 h-px bg-gray-900"></div>
                 </div>
                 <p className="text-gray-600 font-medium tracking-wider">
-                  {String((selectedImage.index || 0) + 1).padStart(2, '0')} / {String(images.length).padStart(2, '0')}
+                  {String((selectedImage.index || 0) + 1).padStart(2, "0")} /{" "}
+                  {String(images.length).padStart(2, "0")}
                 </p>
               </div>
             </div>
