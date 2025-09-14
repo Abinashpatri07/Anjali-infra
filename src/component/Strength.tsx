@@ -255,7 +255,7 @@ const Strength: React.FC = () => {
     },
     {
       names: ["V Veerababu"],
-      role: "Head of Engineering",
+      role: "Head of The Manager Operation",
       icon: Settings,
       color: "from-emerald-600 to-teal-600",
       description: "Overseeing all engineering operations",
@@ -264,7 +264,7 @@ const Strength: React.FC = () => {
       ]
     },
     {
-      names: ["Sai Prasad", "K Ramesh Babu", "P Anil Kumar"],
+      names: ["K Ramesh Babu", "Sai Prasad", "P Anil Kumar"],
       role: "Project Engineers",
       icon: HardHat,
       color: "from-orange-600 to-red-600",
