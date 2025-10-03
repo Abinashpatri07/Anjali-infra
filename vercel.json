@@ -1,6 +1,11 @@
 {
-    "rewrites": [
-      { "source": "/(.*)", "destination": "/" }
-    ]
-  }
+  "redirects": [
+    {
+      "source": "/lander",
+      "destination": "/",
+      "permanent": true
+    }
+  ]
+}
+
   
