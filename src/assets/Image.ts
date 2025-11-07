@@ -24,8 +24,12 @@ import ramesh from "./ramesh2.jpg"
 import normal from "./normal.png"
 import gallery15 from "./Gallery15.jpg"
 import gallery17 from "./gallery17.jpg"
+import triel1 from "./triel1.jpg"
+import triel2 from "./triel2.jpg"
+import triel3 from "./triel3.jpeg"
+
 
 
 
 export {img, img2, img3, logo3, gallery1, gallery2, gallery3, gallery4, gallery6, gallery9, ramesh, normal, gallery17, gallery15,
-    gallery8, gallery12, gallery11, partener1, partener2, partener3, founder1, founder2, veerababu, ganesh, chandu};
+    gallery8, gallery12, gallery11, partener1, partener2, partener3, founder1, founder2, veerababu, ganesh, chandu, triel1, triel2, triel3};

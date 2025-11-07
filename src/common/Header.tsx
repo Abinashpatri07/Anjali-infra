@@ -1,157 +1,3 @@
-
-// import React, { useState, useEffect, useRef } from "react";
-// import { Menu, X } from "lucide-react";
-// import { logo3 } from "../assets/Image";
-// import { Link } from "react-router-dom";
-
-// const Header: React.FC = () => {
-//   const [menuOpen, setMenuOpen] = useState(false);
-//   const sidebarRef = useRef<HTMLDivElement>(null);
-
-//   // Close sidebar when clicking outside
-//   useEffect(() => {
-//     const handleClickOutside = (event: MouseEvent) => {
-//       if (
-//         sidebarRef.current &&
-//         !sidebarRef.current.contains(event.target as Node)
-//       ) {
-//         setMenuOpen(false);
-//       }
-//     };
-
-//     if (menuOpen) {
-//       document.addEventListener("mousedown", handleClickOutside);
-//     } else {
-//       document.removeEventListener("mousedown", handleClickOutside);
-//     }
-
-//     return () => {
-//       document.removeEventListener("mousedown", handleClickOutside);
-//     };
-//   }, [menuOpen]);
-
-//   // Prevent body scroll when sidebar is open
-//   useEffect(() => {
-//     document.body.style.overflow = menuOpen ? "hidden" : "unset";
-//     return () => {
-//       document.body.style.overflow = "unset";
-//     };
-//   }, [menuOpen]);
-
-//   return (
-//     <>
-//       <header
-//         className="fixed top-0 left-0 w-full z-50 px-5 
-//              bg-gradient-to-b from-slate-900 via-slate-800 to-slate-700 
-//              bg-opacity-95 backdrop-blur-md text-white"
-//       >
-//         {/* Background Effects */}
-//         <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/20 via-cyan-400/10 to-indigo-400/20 mix-blend-overlay"></div>
-
-//         <div className="flex items-center justify-between w-full max-w-7xl mx-auto relative">
-
-//           {/* Logo */}
-//           <div className="flex-shrink-0">
-//             <img
-//               src={logo3}
-//               alt="Logo"
-//               className="h-8 sm:h-10 md:h-12 lg:h-16 w-auto object-contain"
-//             />
-//           </div>
-
-//           {/* Desktop Navigation */}
-//           <nav className="hidden md:flex space-x-5 text-sm font-medium">
-//             <Link to="/" className="hover:text-blue-400 transition-colors">
-//               HOME
-//             </Link>
-//             <Link to="/strength" className="hover:text-blue-400 transition-colors">
-//               PROFILE
-//             </Link>
-//             <Link to="/project" className="hover:text-blue-400 transition-colors">
-//               PROJECT
-//             </Link>
-//             <Link to="/gallery" className="hover:text-blue-400 transition-colors">
-//               GALLERY
-//             </Link>
-//             <Link to="/contact" className="hover:text-blue-400 transition-colors">
-//               CONTACT US
-//             </Link>
-//             {/* <Link to="/anjaliinfra/admin/dashboard" className="hover:text-blue-400 transition-colors">
-//               admin
-//             </Link> */}
-//           </nav>
-
-//           {/* Mobile Menu Button */}
-//           <div className="flex items-center">
-//             <button
-//               onClick={() => setMenuOpen(!menuOpen)}
-//               className="md:hidden text-lg z-50 relative p-2 hover:bg-white rounded-full text-gray-300"
-//             >
-//               {menuOpen ? <X className="text-slate-800" /> : <Menu />}
-//             </button>
-//           </div>
-//         </div>
-//       </header>
-
-//       {/* Backdrop */}
-//       {menuOpen && (
-//         <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 md:hidden" />
-//       )}
-
-//       {/* Mobile Sidebar */}
-//       <div
-//         ref={sidebarRef}
-//         className={`fixed top-0 right-0 h-full w-80 
-//               bg-gradient-to-b from-slate-900 via-slate-800 to-slate-700 
-//               bg-opacity-95 backdrop-blur-md 
-//               z-50 shadow-2xl md:hidden transform transition-transform duration-300 
-//               ${menuOpen ? "translate-x-0" : "translate-x-full"}`}
-//       >
-//         {/* Background Effects */}
-//         <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/20 via-cyan-400/10 to-indigo-400/20 mix-blend-overlay"></div>
-//         <div className="absolute top-0 left-0 w-40 h-40 bg-blue-500/30 rounded-full blur-3xl"></div>
-//         <div className="absolute bottom-0 right-0 w-32 h-32 bg-indigo-400/30 rounded-full blur-2xl"></div>
-
-//         {/* Sidebar Header */}
-//         <div className="flex items-center justify-between p-6 border-b border-white/20 relative">
-//           <h2 className="text-xl font-bold text-white">Menu</h2>
-//           <button
-//             onClick={() => setMenuOpen(false)}
-//             className="p-2 hover:bg-white/10 rounded-full text-white"
-//           >
-//             <X className="text-lg" />
-//           </button>
-//         </div>
-
-//         {/* Navigation */}
-//         <nav className="px-6 py-8 space-y-6 relative">
-//           {[
-//             { to: "/", text: "HOME" },
-//             { to: "/strength", text: "PROFILE" },
-//             { to: "/gallery", text: "GALLERY" },
-//             { to: "/project", text: "PROJECT" },
-//             { to: "/contact", text: "CONTACT US" },
-//           ].map((link) => (
-//             <Link
-//               key={link.text}
-//               to={link.to}
-//               className="block text-white text-lg font-semibold 
-//                    hover:text-cyan-300 py-3 px-4 rounded-lg 
-//                    hover:bg-white/10 border-l-4 border-transparent hover:border-cyan-400"
-//               onClick={() => setMenuOpen(false)}
-//             >
-//               {link.text}
-//             </Link>
-//           ))}
-//         </nav>
-//       </div>
-//     </>
-//   );
-// };
-
-// export default Header;
-
-
 import React, { useState, useEffect, useRef } from "react";
 import { Menu, X } from "lucide-react";
 import { logo3 } from "../assets/Image";
@@ -159,126 +5,121 @@ import { Link, useLocation } from "react-router-dom";
 
 const Header: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const sidebarRef = useRef<HTMLDivElement>(null);
-  const location = useLocation(); // Get current location
+  const location = useLocation();
+
+  // Detect scroll or cursor move (only for home page)
+  useEffect(() => {
+    if (location.pathname !== "/") {
+      setIsScrolled(true);
+      return;
+    }
+
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+
+    const handleMouseMove = () => {
+      setIsScrolled(true);
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("mousemove", handleMouseMove);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, [location.pathname]);
 
   // Close sidebar when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (
-        sidebarRef.current &&
-        !sidebarRef.current.contains(event.target as Node)
-      ) {
+      if (sidebarRef.current && !sidebarRef.current.contains(event.target as Node)) {
         setMenuOpen(false);
       }
     };
 
-    if (menuOpen) {
-      document.addEventListener("mousedown", handleClickOutside);
-    } else {
-      document.removeEventListener("mousedown", handleClickOutside);
-    }
+    if (menuOpen) document.addEventListener("mousedown", handleClickOutside);
+    else document.removeEventListener("mousedown", handleClickOutside);
 
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [menuOpen]);
 
   // Prevent body scroll when sidebar is open
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "unset";
-    return () => {
-      document.body.style.overflow = "unset";
-    };
   }, [menuOpen]);
 
-  // Function to check if link is active
-  const isActive = (path: string) => {
-    return location.pathname === path;
-  };
+  const isActive = (path: string) => location.pathname === path;
 
   return (
     <>
       <header
-        className="fixed top-0 left-0 w-full z-50 px-5 
-             bg-gradient-to-b from-slate-900 via-slate-800 to-slate-700 
-             bg-opacity-95 backdrop-blur-md text-white"
+        className={`fixed top-0 left-0 w-full z-50 px-4 sm:px-6 transition-all duration-700 ease-in-out ${
+          isScrolled
+            ? "bg-gradient-to-b from-slate-900/90 via-slate-800/85 to-slate-700/75 backdrop-blur-md shadow-md"
+            : "bg-transparent backdrop-blur-0 shadow-none"
+        }`}
       >
-        {/* Background Effects */}
-        <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/20 via-cyan-400/10 to-indigo-400/20 mix-blend-overlay"></div>
+        {/* Overlay */}
+        {isScrolled && (
+          <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/10 via-cyan-400/10 to-indigo-400/10 mix-blend-overlay pointer-events-none"></div>
+        )}
 
-        <div className="flex items-center justify-between w-full max-w-7xl mx-auto relative">
-
+        <div className="flex items-center justify-between w-full max-w-7xl mx-auto relative py-1 md:py-2">
           {/* Logo */}
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0 flex items-center">
             <img
               src={logo3}
               alt="Logo"
-              className="h-8 sm:h-10 md:h-12 lg:h-16 w-auto object-contain"
+              className="h-12 sm:h-14 md:h-16 lg:h-[72px] w-auto object-contain transition-all duration-500"
             />
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex text-sm font-medium">
-            <Link 
-              to="/" 
-              className={`px-3 py-2 rounded-lg transition-all duration-300 ${
-                isActive('/') 
-                  ? 'text-cyan-300 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 border-b-2 border-cyan-400' 
-                  : 'hover:text-blue-400 hover:bg-white/5'
-              }`}
-            >
-              HOME
-            </Link>
-            <Link 
-              to="/strength" 
-              className={`px-3 py-2 rounded-lg transition-all duration-300 ${
-                isActive('/strength') 
-                  ? 'text-cyan-300 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 border-b-2 border-cyan-400' 
-                  : 'hover:text-blue-400 hover:bg-white/5'
-              }`}
-            >
-              PROFILE
-            </Link>
-            <Link 
-              to="/project" 
-              className={`px-3 py-2 rounded-lg transition-all duration-300 ${
-                isActive('/project') 
-                  ? 'text-cyan-300 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 border-b-2 border-cyan-400' 
-                  : 'hover:text-blue-400 hover:bg-white/5'
-              }`}
-            >
-              PROJECT
-            </Link>
-            <Link 
-              to="/gallery" 
-              className={`px-3 py-2 rounded-lg transition-all duration-300 ${
-                isActive('/gallery') 
-                  ? 'text-cyan-300 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 border-b-2 border-cyan-400' 
-                  : 'hover:text-blue-400 hover:bg-white/5'
-              }`}
-            >
-              GALLERY
-            </Link>
-            <Link 
-              to="/contact" 
-              className={`px-3 py-2 rounded-lg transition-all duration-300 ${
-                isActive('/contact') 
-                  ? 'text-cyan-300 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 border-b-2 border-cyan-400' 
-                  : 'hover:text-blue-400 hover:bg-white/5'
-              }`}
-            >
-              CONTACT US
-            </Link>
+          <nav className="hidden md:flex text-sm font-medium space-x-6">
+            {[
+              { to: "/", text: "HOME" },
+              { to: "/strength", text: "PROFILE" },
+              { to: "/project", text: "PROJECT" },
+              { to: "/gallery", text: "GALLERY" },
+              { to: "/contact", text: "CONTACT US" },
+            ].map((link) => (
+              <Link
+                key={link.text}
+                to={link.to}
+                className={`relative pb-1 transition-all duration-300 ${
+                  isActive(link.to)
+                    ? "text-sky-300 font-semibold"
+                    : "text-gray-300 hover:text-sky-300"
+                }`}
+              >
+                {link.text}
+                <span
+                  className={`absolute left-0 bottom-0 h-[2px] w-0 bg-gradient-to-r from-sky-400 to-blue-500 transition-all duration-300 ${
+                    isActive(link.to)
+                      ? "w-full"
+                      : "group-hover:w-full hover:w-full"
+                  }`}
+                ></span>
+              </Link>
+            ))}
           </nav>
 
           {/* Mobile Menu Button */}
           <div className="flex items-center">
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className="md:hidden text-lg z-50 relative p-2 hover:bg-white rounded-full text-gray-300"
+              className="md:hidden text-2xl z-50 relative p-2 rounded-full transition-all duration-300 hover:scale-110"
             >
-              {menuOpen ? <X className="text-slate-800" /> : <Menu />}
+              {menuOpen ? (
+                <X className="text-sky-300" />
+              ) : (
+                <Menu className="text-sky-300" />
+              )}
             </button>
           </div>
         </div>
@@ -286,23 +127,21 @@ const Header: React.FC = () => {
 
       {/* Backdrop */}
       {menuOpen && (
-        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 md:hidden" />
+        <div
+          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 md:hidden"
+          onClick={() => setMenuOpen(false)}
+        />
       )}
 
       {/* Mobile Sidebar */}
       <div
         ref={sidebarRef}
-        className={`fixed top-0 right-0 h-full w-80 
-              bg-gradient-to-b from-slate-900 via-slate-800 to-slate-700 
-              bg-opacity-95 backdrop-blur-md 
-              z-50 shadow-2xl md:hidden transform transition-transform duration-300 
-              ${menuOpen ? "translate-x-0" : "translate-x-full"}`}
+        className={`fixed top-0 right-0 h-full w-72 
+          bg-gradient-to-b from-slate-900 via-slate-800 to-slate-700 
+          bg-opacity-95 backdrop-blur-md 
+          z-50 shadow-2xl md:hidden transform transition-transform duration-300 
+          ${menuOpen ? "translate-x-0" : "translate-x-full"}`}
       >
-        {/* Background Effects */}
-        <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/20 via-cyan-400/10 to-indigo-400/20 mix-blend-overlay"></div>
-        <div className="absolute top-0 left-0 w-40 h-40 bg-blue-500/30 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-0 w-32 h-32 bg-indigo-400/30 rounded-full blur-2xl"></div>
-
         {/* Sidebar Header */}
         <div className="flex items-center justify-between p-6 border-b border-white/20 relative">
           <h2 className="text-xl font-bold text-white">Menu</h2>
@@ -310,7 +149,7 @@ const Header: React.FC = () => {
             onClick={() => setMenuOpen(false)}
             className="p-2 hover:bg-white/10 rounded-full text-white"
           >
-            <X className="text-lg" />
+            <X className="text-sky-300" />
           </button>
         </div>
 
@@ -326,10 +165,10 @@ const Header: React.FC = () => {
             <Link
               key={link.text}
               to={link.to}
-              className={`block text-lg font-semibold py-3 px-4 rounded-lg transition-all duration-300 ${
+              className={`block text-lg font-semibold py-2 transition-all duration-300 ${
                 isActive(link.to)
-                  ? 'text-cyan-300 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border-l-4 border-cyan-400 shadow-lg'
-                  : 'text-white hover:text-cyan-300 hover:bg-white/10 border-l-4 border-transparent hover:border-cyan-400'
+                  ? "text-sky-300 border-l-4 border-sky-400 pl-3"
+                  : "text-gray-300 hover:text-sky-300 hover:pl-3"
               }`}
               onClick={() => setMenuOpen(false)}
             >
@@ -343,5 +182,3 @@ const Header: React.FC = () => {
 };
 
 export default Header;
-
-

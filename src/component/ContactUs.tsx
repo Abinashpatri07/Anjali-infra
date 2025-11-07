@@ -25,7 +25,7 @@ const ContactUs = () => {
     }));
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async() => {
     if (!formData.name || !formData.email || !formData.subject || !formData.message) {
       alert('Please fill in all fields');
       return;
@@ -33,8 +33,16 @@ const ContactUs = () => {
     
     setIsSubmitting(true);
 
-    console.log(formData)
+    // /api/contact-us
+    const response = await fetch('http://localhost:5000/api/contact-us',{
+      method: 'POST', 
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    });
     
+    console.log(response);
     // Simulate form submission
     setTimeout(() => {
       alert('Thank you for your message! We will get back to you soon.');

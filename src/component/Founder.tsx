@@ -1,116 +1,102 @@
-import { founder1, founder2 } from "../assets/Image"; // Import your images
+import { founder1, founder2 } from "../assets/Image";
 
 const Founder = () => {
   return (
-    <div className="bg-white py-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
-      {/* Background Decorative Elements */}
-      <div className="absolute top-0 left-0 w-64 h-64 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 right-0 w-48 h-48 bg-gradient-to-br from-cyan-400/20 to-green-400/20 rounded-full blur-2xl"></div>
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-br from-indigo-300/10 to-pink-300/10 rounded-full blur-3xl"></div>
-      
-      <div className="max-w-7xl mx-auto relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-4">
-             Meet Our{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">
-                Founders
-              </span>
-            </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-6"></div>
-          <p className="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto leading-relaxed">
-            The visionaries behind our company, driving innovation and excellence
-          </p>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
-          {/* Founder Card 1 */}
-          <div className="group relative">
-            {/* Card Background with Gradient Border */}
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-500 rounded-2xl blur opacity-75 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <div className="relative bg-white rounded-2xl p-1.5">
-              <div className="bg-white rounded-xl overflow-hidden transform transition-all duration-500 group-hover:scale-[0.98]">
-                {/* Image Section with Overlay */}
-                <div className="relative h-64 overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-t from-blue-600/20 via-transparent to-purple-600/20"></div>
-                  <img 
-                    src={founder1} 
-                    alt="Niranjan Mishra"
-                    className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110"
-                  />
-                  {/* Floating Decorative Elements */}
-                  <div className="absolute top-4 right-4 w-12 h-12 bg-gradient-to-br from-blue-400 to-cyan-400 rounded-full opacity-80 blur-sm"></div>
-                  <div className="absolute bottom-4 left-4 w-8 h-8 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full opacity-70 blur-sm"></div>
-                </div>
-                
-                {/* Name Section with Enhanced Styling */}
-                <div className="p-8 text-center relative">
-                  {/* Background Pattern */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-transparent to-cyan-50/50"></div>
-                  
-                  <div className="relative z-10">
-                    <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-700 to-cyan-700 bg-clip-text text-transparent mb-3">
-                      Niranjan Mishra
-                    </h3>
-                    <div className="inline-block px-4 py-2 bg-gradient-to-r from-blue-500 to-cyan-500 text-white text-sm font-semibold rounded-full mb-4 shadow-lg">
-                      Founder
-                    </div>
-                    {/* <p className="text-gray-600 leading-relaxed text-base">
-                      Passionate about innovation and building products that make a difference in people's lives.
-                    </p> */}
-                    
-                    {/* Decorative Bottom Line */}
-                    <div className="w-16 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mt-6 rounded-full"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+    <section className="relative bg-gray-50 py-24 px-4 sm:px-8 lg:px-16 overflow-hidden">
+      {/* 🌈 Background Decorative Blurs */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="absolute top-0 left-0 w-72 h-72 bg-gradient-to-br from-blue-500/10 to-cyan-400/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-0 w-72 h-72 bg-gradient-to-br from-purple-500/10 to-pink-400/10 rounded-full blur-3xl"></div>
+      </div>
 
-          {/* Founder Card 2 */}
-          <div className="group relative">
-            {/* Card Background with Gradient Border */}
-            <div className="absolute inset-0 bg-gradient-to-r from-green-500 via-blue-500 to-purple-500 rounded-2xl blur opacity-75 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <div className="relative bg-white rounded-2xl p-1.5">
-              <div className="bg-white rounded-xl overflow-hidden transform transition-all duration-500 group-hover:scale-[0.98]">
-                {/* Image Section with Overlay */}
-                <div className="relative h-64 overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-t from-green-600/20 via-transparent to-blue-600/20"></div>
-                  <img 
-                    src={founder2} 
-                    alt="Soumya Ranjan Mishra"
-                    className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110"
-                  />
-                  {/* Floating Decorative Elements */}
-                  <div className="absolute top-4 right-4 w-12 h-12 bg-gradient-to-br from-green-400 to-blue-400 rounded-full opacity-80 blur-sm"></div>
-                  <div className="absolute bottom-4 left-4 w-8 h-8 bg-gradient-to-br from-blue-400 to-purple-400 rounded-full opacity-70 blur-sm"></div>
-                </div>
-                
-                {/* Name Section with Enhanced Styling */}
-                <div className="p-8 text-center relative">
-                  {/* Background Pattern */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-green-50/50 via-transparent to-blue-50/50"></div>
-                  
-                  <div className="relative z-10">
-                    <h3 className="text-2xl font-bold bg-gradient-to-r from-green-700 to-blue-700 bg-clip-text text-transparent mb-3">
-                      Soumya Ranjan Mishra
-                    </h3>
-                    <div className="inline-block px-4 py-2 bg-gradient-to-r from-green-500 to-blue-500 text-white text-sm font-semibold rounded-full mb-4 shadow-lg">
-                      Co-Founder
-                    </div>
-                    {/* <p className="text-gray-600 leading-relaxed text-base">
-                      Technology enthusiast with a vision for creating scalable solutions and exceptional user experiences.
-                    </p> */}
-                    
-                    {/* Decorative Bottom Line */}
-                    <div className="w-16 h-1 bg-gradient-to-r from-green-500 to-blue-500 mx-auto mt-6 rounded-full"></div>
-                  </div>
-                </div>
+      {/* 🏷️ Section Heading */}
+      <div className="relative z-10 text-center mb-16">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+          Meet Our{" "}
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">
+            Founders
+          </span>
+        </h2>
+        <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto rounded-full"></div>
+      </div>
+
+      {/* 🔹 Layout */}
+      <div className="relative z-10 max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-16">
+        {/* Left Section — Founders */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 w-full lg:w-1/2 place-items-center relative z-20">
+          {[
+            {
+              name: "Niranjan Mishra",
+              title: "Founder",
+              image: founder1,
+              color: "from-blue-500 to-cyan-500",
+            },
+            {
+              name: "Soumya Ranjan Mishra",
+              title: "Co-Founder",
+              image: founder2,
+              color: "from-indigo-500 to-purple-500",
+            },
+          ].map((founder, i) => (
+            <div
+              key={i}
+              className="relative group flex flex-col items-center text-center transition-all duration-500 hover:-translate-y-1"
+            >
+              {/* Hexagon Image Wrapper */}
+              <div className="relative w-56 h-56 sm:w-64 sm:h-64 hex-shape overflow-hidden shadow-lg transition-transform duration-500 group-hover:scale-105 bg-white flex items-center justify-center p-3">
+                <img
+                  src={founder.image}
+                  alt={founder.name}
+                  className="object-contain w-full h-full"
+                />
+                <div
+                  className={`absolute inset-0 bg-gradient-to-br ${founder.color} opacity-0 group-hover:opacity-25 transition-opacity duration-500`}
+                ></div>
               </div>
+
+              {/* Name + Title */}
+              <h3 className="mt-4 text-lg font-bold text-slate-800">
+                {founder.name}
+              </h3>
+              <p className="text-sm font-semibold text-blue-600 mb-2">
+                {founder.title}
+              </p>
             </div>
+          ))}
+        </div>
+
+        {/* Right Section — Curved Blue Background */}
+        <div className="relative w-full lg:w-1/2 text-center lg:text-left overflow-visible">
+          {/* Curved Shape (Moved behind images with z-index fix) */}
+          <div className="absolute top-0 right-0 w-[130%] h-full bg-gradient-to-br from-[#1e3a8a] to-[#06b6d4] rounded-l-[6rem] shadow-xl z-0"></div>
+
+          {/* Text Content */}
+          <div className="relative z-10 text-white px-6 sm:px-8 md:px-12 py-10 lg:py-20">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 drop-shadow-lg">
+              ABOUT
+            </h2>
+            <p className="text-blue-100 text-base md:text-lg leading-relaxed mb-6">
+              At Anjali Infra, creativity meets precision. Our founders bring
+              innovation, experience, and leadership that shape every vision
+              into architectural reality. Together, they drive excellence
+              through collaboration, innovation, and a commitment to quality.
+            </p>
+            <p className="text-blue-100 text-base md:text-lg leading-relaxed">
+              With a team that values trust, transparency, and technology, we
+              continue building infrastructure that inspires, empowers, and
+              endures.
+            </p>
           </div>
         </div>
       </div>
-    </div>
+
+      {/* 🧩 Custom CSS for Hexagon */}
+      <style>{`
+        .hex-shape {
+          clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
+        }
+      `}</style>
+    </section>
   );
 };
 
