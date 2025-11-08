@@ -8,3 +8,29 @@ createRoot(document.getElementById('root')!).render(
     <App />
   </StrictMode>,
 )
+
+
+
+// {
+//   "redirects": [
+//     {
+//       "source": "/lander",
+//       "destination": "/",
+//       "permanent": true
+//     },
+//     {
+//       "source": "https://anjaliinfra.in/(.*)",
+//       "destination": "https://www.anjaliinfra.in/$1",
+//       "permanent": true
+//     }
+//   ],
+//   "rewrites": [
+//     {
+//       "source": "/(.*)",
+//       "destination": "/"
+//     }
+//   ]
+// }
+
+
+  
