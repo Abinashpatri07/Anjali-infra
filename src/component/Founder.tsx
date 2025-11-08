@@ -72,9 +72,9 @@ const Founder = () => {
 
           {/* Text Content */}
           <div className="relative z-10 text-white px-6 sm:px-8 md:px-12 py-10 lg:py-20">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 drop-shadow-lg">
+            {/* <h2 className="text-4xl md:text-5xl font-bold mb-4 drop-shadow-lg">
               ABOUT
-            </h2>
+            </h2> */}
             <p className="text-blue-100 text-base md:text-lg leading-relaxed mb-6">
               At Anjali Infra, creativity meets precision. Our founders bring
               innovation, experience, and leadership that shape every vision

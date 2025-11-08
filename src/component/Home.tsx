@@ -225,55 +225,54 @@ const Home: React.FC = () => {
         </div>
       </div> */}
       <div className="relative w-full bg-white py-14 md:py-24 px-4 sm:px-8 lg:px-16 overflow-hidden">
-  {/* Decorative Gradient Backgrounds */}
-  <div className="absolute top-10 left-0 w-64 h-64 bg-gradient-to-br from-blue-100 via-cyan-100 to-transparent rounded-full blur-3xl opacity-60"></div>
-  <div className="absolute bottom-0 right-0 w-72 h-72 bg-gradient-to-tr from-cyan-200 via-blue-100 to-transparent rounded-full blur-3xl opacity-60"></div>
+        {/* Decorative Gradient Backgrounds */}
+        <div className="absolute top-10 left-0 w-64 h-64 bg-gradient-to-br from-blue-100 via-cyan-100 to-transparent rounded-full blur-3xl opacity-60"></div>
+        <div className="absolute bottom-0 right-0 w-72 h-72 bg-gradient-to-tr from-cyan-200 via-blue-100 to-transparent rounded-full blur-3xl opacity-60"></div>
 
-  <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12 relative z-10">
-    
-    {/* Left Side – Text Section */}
-    <div className="text-left md:w-1/2 lg:pl-8 animate-slideInLeft">
-      <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-        <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">
-          ANJALI <span className="text-gray-800">INFRA</span>
-        </span>
-      </h1>
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12 relative z-10">
+          {/* Left Side – Text Section */}
+          <div className="text-left md:w-1/2 lg:pl-8 animate-slideInLeft">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">
+                ANJALI <span className="text-gray-800">INFRA</span>
+              </span>
+            </h1>
 
-      <div className="w-28 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mb-6 rounded-full"></div>
+            <div className="w-28 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mb-6 rounded-full"></div>
 
-      <p className="text-slate-800 text-base md:text-lg lg:text-xl font-medium leading-relaxed max-w-xl tracking-wide drop-shadow-[0_1px_2px_rgba(0,0,0,0.25)]">
-        Anjali Infra stands as a beacon of excellence in the construction
-        and infrastructure development industry. With years of experience
-        and unwavering commitment to quality, we transform visions into
-        reality through innovative engineering solutions and sustainable
-        construction practices.
-      </p>
-    </div>
+            <p className="text-slate-800 text-base md:text-lg lg:text-xl font-medium leading-relaxed max-w-xl tracking-wide drop-shadow-[0_1px_2px_rgba(0,0,0,0.25)]">
+              Anjali Infra stands as a beacon of excellence in the construction
+              and infrastructure development industry. With years of experience
+              and unwavering commitment to quality, we transform visions into
+              reality through innovative engineering solutions and sustainable
+              construction practices.
+            </p>
+          </div>
 
-    {/* Right Side – Animated Infrastructure Icon */}
-    <div className="relative md:w-1/2 flex justify-center items-center">
-      <div className="animate-floatSlow animate-slideInRight">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 64 64"
-          className="w-48 h-48 md:w-64 md:h-64 text-cyan-600 drop-shadow-[0_5px_10px_rgba(0,0,0,0.15)]"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2.5"
-        >
-          <path d="M12 52h40M16 52V20l16-8 16 8v32M24 52V28h16v24" />
-          <rect x="28" y="32" width="8" height="8" />
-          <path d="M32 12v4M20 24h4M40 24h4" />
-        </svg>
-      </div>
+          {/* Right Side – Animated Infrastructure Icon */}
+          <div className="relative md:w-1/2 flex justify-center items-center">
+            <div className="animate-floatSlow animate-slideInRight">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 64 64"
+                className="w-48 h-48 md:w-64 md:h-64 text-cyan-600 drop-shadow-[0_5px_10px_rgba(0,0,0,0.15)]"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+              >
+                <path d="M12 52h40M16 52V20l16-8 16 8v32M24 52V28h16v24" />
+                <rect x="28" y="32" width="8" height="8" />
+                <path d="M32 12v4M20 24h4M40 24h4" />
+              </svg>
+            </div>
 
-      {/* Soft Glow Behind Icon */}
-      <div className="absolute right-6 top-1/2 w-40 h-40 bg-cyan-400/20 blur-3xl rounded-full animate-pulse"></div>
-    </div>
-  </div>
+            {/* Soft Glow Behind Icon */}
+            <div className="absolute right-6 top-1/2 w-40 h-40 bg-cyan-400/20 blur-3xl rounded-full animate-pulse"></div>
+          </div>
+        </div>
 
-  {/* ✨ Animations */}
-  <style>{`
+        {/* ✨ Animations */}
+        <style>{`
     @keyframes slideInLeft {
       0% { opacity: 0; transform: translateX(-80px); }
       100% { opacity: 1; transform: translateX(0); }
@@ -298,9 +297,7 @@ const Home: React.FC = () => {
       animation: floatSlow 5s ease-in-out infinite;
     }
   `}</style>
-</div>
-
-
+      </div>
 
       {/* 🧱 Services Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
