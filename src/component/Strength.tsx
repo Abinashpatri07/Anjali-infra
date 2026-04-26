@@ -358,14 +358,14 @@ const Strength: React.FC = () => {
       description: "Structural design and electrical engineering expertise",
       images: [{ name: "B Ganesh", src: ganesh }],
     },
-    {
-      names: ["D Chandu"],
-      role: "Accountant",
-      icon: Calculator,
-      color: "from-green-600 to-emerald-600",
-      description: "Financial management and accounting",
-      images: [{ name: "D Chandu", src: chandu }],
-    },
+    // {
+    //   names: ["D Chandu"],
+    //   role: "Accountant",
+    //   icon: Calculator,
+    //   color: "from-green-600 to-emerald-600",
+    //   description: "Financial management and accounting",
+    //   images: [{ name: "D Chandu", src: chandu }],
+    // },
   ];
 
   const registrations = [

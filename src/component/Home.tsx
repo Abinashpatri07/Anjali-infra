@@ -240,7 +240,7 @@ const Home: React.FC = () => {
 
             <div className="w-28 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mb-6 rounded-full"></div>
 
-            <p className="text-slate-800 text-base md:text-lg lg:text-xl font-medium leading-relaxed max-w-xl tracking-wide drop-shadow-[0_1px_2px_rgba(0,0,0,0.25)]">
+            <p className="text-slate-800 text-base md:text-lg lg:text-xl font-medium leading-relaxed max-w-full sm:max-w-xl text-justify tracking-normal px-4">
               Anjali Infra stands as a beacon of excellence in the construction
               and infrastructure development industry. With years of experience
               and unwavering commitment to quality, we transform visions into
