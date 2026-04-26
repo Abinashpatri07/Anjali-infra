@@ -296,14 +296,14 @@ import {
   Users,
   HardHat,
   Settings,
-  Calculator,
+  
   Building,
   Award,
   FileText,
   X,
 } from "lucide-react";
 import {
-  chandu,
+
   founder1,
   founder2,
   ganesh,
