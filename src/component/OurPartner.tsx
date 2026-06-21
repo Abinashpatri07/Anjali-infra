@@ -217,9 +217,11 @@ const OurPartner = () => {
   useEffect(() => {
     const fetchUploadedImages = async () => {
       try {
-        const response = await fetch(
-          "http://localhost:5000/api/admin/company-images"
-        );
+        const backendUrl = window.location.hostname === "localhost"
+          ? "http://localhost:5000"
+          : "https://anjaliinfraservice.onrender.com"; // Change this if your Render URL changes
+          
+        const response = await fetch(`${backendUrl}/api/admin/company-images`);
         if (response.ok) {
           const result = await response.json();
           if (result.data && result.data.files && result.data.files.length > 0) {
