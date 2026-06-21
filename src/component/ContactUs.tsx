@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, User, MessageSquare, Hash } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, User, MessageSquare, Hash, CheckCircle, X, AlertCircle } from 'lucide-react';
 
 interface FormData {
   name: string;
@@ -16,6 +16,8 @@ const ContactUs = () => {
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showSuccessPopup, setShowSuccessPopup] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -26,29 +28,38 @@ const ContactUs = () => {
   };
 
   const handleSubmit = async() => {
+    setErrorMessage("");
     if (!formData.name || !formData.email || !formData.subject || !formData.message) {
-      alert('Please fill in all fields');
+      setErrorMessage('Please fill in all fields');
       return;
     }
     
     setIsSubmitting(true);
 
-    // /api/contact-us
-    const response = await fetch('http://localhost:5000/api/contact-us',{
-      method: 'POST', 
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(formData),
-    });
-    
-    console.log(response);
-    // Simulate form submission
-    setTimeout(() => {
-      alert('Thank you for your message! We will get back to you soon.');
-      setFormData({ name: '', email: '', subject: '', message: '' });
+    try {
+      // /api/contact-us
+      const response = await fetch('http://localhost:5000/api/contact-us',{
+        method: 'POST', 
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      
+      const result = await response.json();
+      
+      if (response.ok && result.success) {
+        setShowSuccessPopup(true);
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      } else {
+        setErrorMessage('Failed to send message: ' + (result.message || 'Please try again later.'));
+      }
+    } catch (error) {
+      console.error('Error sending message:', error);
+      setErrorMessage('Network error. Please make sure the backend is running and try again.');
+    } finally {
       setIsSubmitting(false);
-    }, 2000);
+    }
   };
 
   const contactInfo = [
@@ -327,7 +338,76 @@ const ContactUs = () => {
             transform: translateX(0);
           }
         }
+        @keyframes popupIn {
+          0% { opacity: 0; transform: scale(0.9) translateY(20px); }
+          100% { opacity: 1; transform: scale(1) translateY(0); }
+        }
+        .animate-popupIn {
+          animation: popupIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
       `}</style>
+
+      {/* Success Popup Modal */}
+      {showSuccessPopup && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-gray-900/40 backdrop-blur-sm">
+          <div className="bg-white rounded-2xl shadow-2xl p-8 max-w-md w-full animate-popupIn relative overflow-hidden">
+            <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-emerald-400 to-emerald-600"></div>
+            <button 
+              onClick={() => setShowSuccessPopup(false)}
+              className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors"
+            >
+              <X size={24} />
+            </button>
+            
+            <div className="flex flex-col items-center text-center mt-2">
+              <div className="w-20 h-20 bg-emerald-100 rounded-full flex items-center justify-center mb-6 shadow-inner">
+                <CheckCircle className="w-10 h-10 text-emerald-500" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">Message Sent!</h3>
+              <p className="text-gray-600 mb-8">
+                Thank you for reaching out. We have received your message and will get back to you shortly.
+              </p>
+              <button 
+                onClick={() => setShowSuccessPopup(false)}
+                className="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-3 px-6 rounded-xl transition-colors duration-200 shadow-lg shadow-emerald-200/50"
+              >
+                Done
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Error Popup Modal */}
+      {errorMessage && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-gray-900/40 backdrop-blur-sm">
+          <div className="bg-white rounded-2xl shadow-2xl p-8 max-w-md w-full animate-popupIn relative overflow-hidden">
+            <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-red-400 to-red-600"></div>
+            <button 
+              onClick={() => setErrorMessage("")}
+              className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors"
+            >
+              <X size={24} />
+            </button>
+            
+            <div className="flex flex-col items-center text-center mt-2">
+              <div className="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mb-6 shadow-inner">
+                <AlertCircle className="w-10 h-10 text-red-500" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">Oops!</h3>
+              <p className="text-gray-600 mb-8">
+                {errorMessage}
+              </p>
+              <button 
+                onClick={() => setErrorMessage("")}
+                className="w-full bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-6 rounded-xl transition-colors duration-200 shadow-lg shadow-red-200/50"
+              >
+                Try Again
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

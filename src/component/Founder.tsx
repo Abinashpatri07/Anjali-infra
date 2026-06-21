@@ -21,9 +21,16 @@ const Founder = () => {
       </div>
 
       {/* 🔹 Layout */}
-      <div className="relative z-10 max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-16">
+      <div className="relative max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-16 py-8">
+        
+        {/* Curved Blue Background (Stretches to viewport edges to remove empty space) */}
+        {/* Desktop swoop spans from 35% of the container all the way past the right edge */}
+        <div className="hidden lg:block absolute top-0 bottom-0 left-[35%] right-[-50vw] bg-gradient-to-br from-[#1e3a8a] to-[#06b6d4] rounded-l-[6rem] shadow-2xl z-0"></div>
+        {/* Mobile swoop spans the entire width of the screen */}
+        <div className="block lg:hidden absolute top-[35%] bottom-0 left-[-50vw] right-[-50vw] bg-gradient-to-br from-[#1e3a8a] to-[#06b6d4] rounded-t-[4rem] shadow-2xl z-0"></div>
+
         {/* Left Section — Founders */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 w-full lg:w-1/2 place-items-center relative z-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 w-full lg:w-1/2 place-items-center relative z-10">
           {[
             {
               name: "Niranjan Mishra",
@@ -40,62 +47,52 @@ const Founder = () => {
           ].map((founder, i) => (
             <div
               key={i}
-              className="relative group flex flex-col items-center text-center transition-all duration-500 hover:-translate-y-1"
+              className="relative group flex flex-col items-center text-center transition-all duration-500 hover:-translate-y-2"
             >
-              {/* Hexagon Image Wrapper */}
-              <div className="relative w-56 h-56 sm:w-64 sm:h-64 hex-shape overflow-hidden shadow-lg transition-transform duration-500 group-hover:scale-105 bg-white flex items-center justify-center p-3">
+              {/* Circle Drop Shadow */}
+              <div className="absolute top-0 w-56 h-56 sm:w-64 sm:h-64 rounded-full bg-black/15 blur-xl translate-y-3 -z-10 group-hover:translate-y-5 transition-transform duration-500"></div>
+
+              {/* Circle Image Wrapper */}
+              <div className="relative w-56 h-56 sm:w-64 sm:h-64 rounded-full overflow-hidden bg-white flex items-center justify-center z-10 transition-transform duration-500 group-hover:scale-105 border-4 border-white/50 shadow-lg">
                 <img
                   src={founder.image}
                   alt={founder.name}
-                  className="object-contain w-full h-full"
+                  className="object-cover object-top w-full h-full"
                 />
                 <div
-                  className={`absolute inset-0 bg-gradient-to-br ${founder.color} opacity-0 group-hover:opacity-25 transition-opacity duration-500`}
+                  className={`absolute inset-0 bg-gradient-to-br ${founder.color} opacity-0 group-hover:opacity-20 transition-opacity duration-500`}
                 ></div>
               </div>
 
-              {/* Name + Title */}
-              <h3 className="mt-4 text-lg font-bold text-slate-800">
-                {founder.name}
-              </h3>
-              <p className="text-sm font-semibold text-blue-600 mb-2">
-                {founder.title}
-              </p>
+              {/* Name + Title (Wrapped in a card for readability over the blue swoop) */}
+              <div className="mt-5 bg-white/90 backdrop-blur-sm px-5 py-2 rounded-xl shadow-sm border border-white/50 transition-all duration-500 group-hover:shadow-md">
+                <h3 className="text-lg font-bold text-slate-800">
+                  {founder.name}
+                </h3>
+                <p className="text-sm font-semibold text-blue-600">
+                  {founder.title}
+                </p>
+              </div>
             </div>
           ))}
         </div>
 
-        {/* Right Section — Curved Blue Background */}
-        <div className="relative w-full lg:w-1/2 text-center lg:text-left overflow-visible">
-          {/* Curved Shape (Moved behind images with z-index fix) */}
-          <div className="absolute top-0 right-0 w-[130%] h-full bg-gradient-to-br from-[#1e3a8a] to-[#06b6d4] rounded-l-[6rem] shadow-xl z-0"></div>
-
-          {/* Text Content */}
-          <div className="relative z-10 text-white px-6 sm:px-8 md:px-12 py-10 lg:py-20">
-            {/* <h2 className="text-4xl md:text-5xl font-bold mb-4 drop-shadow-lg">
-              ABOUT
-            </h2> */}
-            <p className="text-blue-100 text-base md:text-lg leading-relaxed mb-6">
-              At Anjali Infra, creativity meets precision. Our founders bring
-              innovation, experience, and leadership that shape every vision
-              into architectural reality. Together, they drive excellence
-              through collaboration, innovation, and a commitment to quality.
-            </p>
-            <p className="text-blue-100 text-base md:text-lg leading-relaxed">
-              With a team that values trust, transparency, and technology, we
-              continue building infrastructure that inspires, empowers, and
-              endures.
-            </p>
-          </div>
+        {/* Right Section — Text Content */}
+        <div className="relative z-10 w-full lg:w-1/2 text-center lg:text-left px-8 sm:px-12 md:px-16 py-16 lg:py-20 lg:pl-12 lg:pr-0">
+          <p className="text-white text-base md:text-lg leading-relaxed mb-6 font-medium tracking-wide">
+            At Anjali Infra, creativity meets precision. Our founders bring
+            innovation, experience, and leadership that shape every vision
+            into architectural reality. Together, they drive excellence
+            through collaboration, innovation, and a commitment to quality.
+          </p>
+          <p className="text-blue-100 text-base md:text-lg leading-relaxed font-medium tracking-wide">
+            With a team that values trust, transparency, and technology, we
+            continue building infrastructure that inspires, empowers, and
+            endures.
+          </p>
         </div>
       </div>
 
-      {/* 🧩 Custom CSS for Hexagon */}
-      <style>{`
-        .hex-shape {
-          clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
-        }
-      `}</style>
     </section>
   );
 };

@@ -218,11 +218,11 @@ const OurPartner = () => {
     const fetchUploadedImages = async () => {
       try {
         const response = await fetch(
-          "https://anjaliinfraservice.onrender.com/api/admin/company-images"
+          "http://localhost:5000/api/admin/company-images"
         );
         if (response.ok) {
           const result = await response.json();
-          if (result.data && result.data.files) {
+          if (result.data && result.data.files && result.data.files.length > 0) {
             setPartners(result.data.files);
           }
         }

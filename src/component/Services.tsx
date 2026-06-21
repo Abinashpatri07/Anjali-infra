@@ -108,7 +108,7 @@ const Services: React.FC<ServicesProps> = ({ services, openPopup }) => {
   return (
     <section
       id="services"
-      className="relative w-full overflow-hidden bg-white py-28 md:py-36"
+      className="relative w-full overflow-hidden bg-white py-10 md:py-16"
     >
       {/* Curved Blue Background */}
       <div className="absolute inset-0 -top-10 md:-top-20 z-0">
@@ -131,46 +131,47 @@ const Services: React.FC<ServicesProps> = ({ services, openPopup }) => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
+      <div className="relative z-10 flex flex-col md:flex-row items-start lg:items-center justify-between w-full px-6 sm:px-10 md:px-16 lg:px-24 xl:px-32">
         {/* Left Side (Curved Blue Area Content) */}
-        <div className="text-white md:w-1/2 text-center md:text-left mb-12 md:mb-0">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 drop-shadow-[0_3px_5px_rgba(0,0,0,0.3)]">
-            OUR <br /> SERVICES
+        <div className="md:w-1/2 text-center md:text-left mb-8 md:mb-0">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">
+            <span className="text-white drop-shadow-[0_3px_5px_rgba(0,0,0,0.3)]">OUR</span> <br /> 
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 drop-shadow-sm">SERVICES</span>
           </h1>
-          <p className="text-black/90 text-base md:text-lg lg:text-xl leading-relaxed max-w-md mx-auto md:mx-0 drop-shadow-sm">
+          <p className="text-slate-700 text-sm md:text-base lg:text-lg leading-relaxed max-w-md mx-auto md:mx-0">
             Discover our range of services crafted to shape infrastructure excellence
             and innovation.
           </p>
         </div>
 
         {/* Right Side (Service Info) */}
-        <div className="md:w-1/2 text-slate-700">
-          <p className="text-base md:text-lg leading-relaxed max-w-lg mb-8 text-white">
+        <div className="md:w-1/2 text-slate-900">
+          <p className="text-base lg:text-lg font-medium leading-relaxed max-w-lg mb-6 text-white md:text-slate-900 lg:-translate-y-4">
             Our dedicated team specializes in delivering modern, high-quality
             infrastructure and digital design solutions. From planning to
             execution, we ensure seamless results tailored to your goals.
           </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6">
             {services.map((service) => (
               <div
                 key={service.id}
-                className="p-6 bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-500 group"
+                className="p-5 lg:p-6 bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-500 group"
               >
                 <div
-                  className={`w-12 h-12 flex items-center justify-center bg-gradient-to-br ${service.colorTheme.gradient} text-white rounded-xl mb-4`}
+                  className={`w-10 h-10 lg:w-12 lg:h-12 flex items-center justify-center bg-gradient-to-br ${service.colorTheme.gradient} text-white rounded-xl mb-3 lg:mb-4`}
                 >
                   {service.icon}
                 </div>
-                <h3 className="text-lg font-bold text-gray-800 mb-2">
+                <h3 className="text-base lg:text-lg font-bold text-gray-800 mb-2">
                   {service.title}
                 </h3>
-                <p className="text-sm text-gray-600 leading-relaxed mb-4">
+                <p className="text-xs lg:text-sm text-gray-600 leading-relaxed mb-3">
                   {service.about}
                 </p>
                 <button
                   onClick={() => openPopup(service.id)}
-                  className="text-sm font-medium text-blue-600 hover:text-cyan-600 transition-all duration-300"
+                  className="text-xs lg:text-sm font-medium text-blue-600 hover:text-cyan-600 transition-all duration-300"
                 >
                   Learn More →
                 </button>

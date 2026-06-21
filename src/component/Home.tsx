@@ -224,10 +224,11 @@ const Home: React.FC = () => {
 
         </div>
       </div> */}
-      <div className="relative w-full bg-white py-14 md:py-24 px-4 sm:px-8 lg:px-16 overflow-hidden">
-        {/* Decorative Gradient Backgrounds */}
-        <div className="absolute top-10 left-0 w-64 h-64 bg-gradient-to-br from-blue-100 via-cyan-100 to-transparent rounded-full blur-3xl opacity-60"></div>
-        <div className="absolute bottom-0 right-0 w-72 h-72 bg-gradient-to-tr from-cyan-200 via-blue-100 to-transparent rounded-full blur-3xl opacity-60"></div>
+      <div className="relative w-full bg-white py-10 md:py-16 px-4 sm:px-8 lg:px-16 overflow-hidden">
+        {/* Decorative Gradient Backgrounds & Shapes */}
+        <div className="absolute -top-32 -right-32 w-80 h-80 md:w-[28rem] md:h-[28rem] rounded-full border-[30px] md:border-[40px] border-blue-100/40 z-0 pointer-events-none"></div>
+        <div className="absolute top-10 left-0 w-48 h-48 bg-gradient-to-br from-blue-100 via-cyan-100 to-transparent rounded-full blur-3xl opacity-60 pointer-events-none"></div>
+        <div className="absolute bottom-0 right-0 w-48 h-48 bg-gradient-to-tr from-cyan-200 via-blue-100 to-transparent rounded-full blur-3xl opacity-60 pointer-events-none"></div>
 
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12 relative z-10">
           {/* Left Side – Text Section */}
@@ -249,25 +250,40 @@ const Home: React.FC = () => {
             </p>
           </div>
 
-          {/* Right Side – Animated Infrastructure Icon */}
-          <div className="relative md:w-1/2 flex justify-center items-center">
-            <div className="animate-floatSlow animate-slideInRight">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 64 64"
-                className="w-48 h-48 md:w-64 md:h-64 text-cyan-600 drop-shadow-[0_5px_10px_rgba(0,0,0,0.15)]"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2.5"
-              >
-                <path d="M12 52h40M16 52V20l16-8 16 8v32M24 52V28h16v24" />
-                <rect x="28" y="32" width="8" height="8" />
-                <path d="M32 12v4M20 24h4M40 24h4" />
-              </svg>
-            </div>
+          {/* Right Side – Elevated Infrastructure Card */}
+          <div className="relative md:w-1/2 flex justify-center items-center p-4 lg:p-6 animate-slideInRight">
+            <div className="relative w-64 h-64 lg:w-80 lg:h-80 bg-gradient-to-br from-white to-blue-50/50 rounded-[2.5rem] shadow-[0_10px_40px_rgba(8,_112,_184,_0.1)] border border-white/80 flex flex-col justify-center items-center transition-transform duration-700 hover:scale-[1.03] group overflow-hidden">
+              
+              {/* Decorative abstract elements */}
+              <div className="absolute -top-12 -right-12 w-40 h-40 bg-cyan-200/40 rounded-full blur-2xl opacity-70 group-hover:bg-cyan-300/40 transition-colors duration-700"></div>
+              <div className="absolute -bottom-12 -left-12 w-40 h-40 bg-blue-200/40 rounded-full blur-2xl opacity-70 group-hover:bg-blue-300/40 transition-colors duration-700"></div>
+              
+              {/* Inner subtle grid pattern */}
+              <div className="absolute inset-0 opacity-[0.02] bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
 
-            {/* Soft Glow Behind Icon */}
-            <div className="absolute right-6 top-1/2 w-40 h-40 bg-cyan-400/20 blur-3xl rounded-full animate-pulse"></div>
+              {/* The Icon */}
+              <div className="relative z-10 animate-floatSlow p-6 lg:p-8 bg-white/60 backdrop-blur-xl rounded-full shadow-[0_4px_20px_rgba(0,0,0,0.04)] border border-white/80">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 64 64"
+                  className="w-24 h-24 lg:w-32 lg:h-32 text-blue-600 drop-shadow-sm transition-transform duration-500 group-hover:scale-110"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 52h40M16 52V20l16-8 16 8v32M24 52V28h16v24" />
+                  <rect x="28" y="32" width="8" height="8" strokeLinecap="round" strokeLinejoin="round" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M32 12v4M20 24h4M40 24h4" />
+                </svg>
+              </div>
+
+              {/* Floating Badge */}
+              <div className="absolute bottom-6 lg:bottom-8 bg-white/90 backdrop-blur-md px-6 py-2 rounded-full shadow-md border border-white/50 transform translate-y-6 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-100">
+                <span className="text-sm lg:text-base font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-cyan-500 tracking-wide uppercase">
+                  Excellence
+                </span>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -300,7 +316,7 @@ const Home: React.FC = () => {
       </div>
 
       {/* 🧱 Services Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
+      <div className="w-full">
         <Services services={services} openPopup={openPopup} />
       </div>
 
