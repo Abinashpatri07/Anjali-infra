@@ -37,8 +37,11 @@ const ContactUs = () => {
     setIsSubmitting(true);
 
     try {
-      // /api/contact-us
-      const response = await fetch('http://localhost:5000/api/contact-us',{
+      const backendUrl = window.location.hostname === "localhost"
+        ? "http://localhost:5000"
+        : "https://anjaliinfraservice.onrender.com";
+
+      const response = await fetch(`${backendUrl}/api/contact-us`,{
         method: 'POST', 
         headers: {
           'Content-Type': 'application/json',
