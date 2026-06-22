@@ -38,6 +38,16 @@ const Projects = () => {
       gradient: "from-purple-500 to-purple-600",
       bgGradient: "from-purple-50 to-purple-100/50",
     },
+    {
+      id: 4,
+      company: "Raghava construction",
+      icon: <Building2 className="w-8 h-8" />,
+      mainService: "RDSS Project, under APEPDCL CIRCLE Andhra Pradesh",
+      services: ["Infrastructure Development and Project Execution"],
+      color: "orange",
+      gradient: "from-orange-500 to-orange-600",
+      bgGradient: "from-orange-50 to-orange-100/50",
+    },
   ];
 
   const toggleProject = (projectId: number) => {
@@ -63,6 +73,12 @@ const Projects = () => {
         text: "text-purple-600",
         bg: "bg-purple-500",
         shadow: "shadow-xl shadow-purple-200/50 hover:shadow-purple-400/60",
+      },
+      orange: {
+        border: "border-orange-500",
+        text: "text-orange-600",
+        bg: "bg-orange-500",
+        shadow: "shadow-xl shadow-orange-200/50 hover:shadow-orange-400/60",
       },
     };
     return colorMap[color as keyof typeof colorMap];
@@ -99,6 +115,7 @@ const Projects = () => {
               <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
               <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full"></div>
               <div className="w-1.5 h-1.5 bg-purple-500 rounded-full"></div>
+              <div className="w-1.5 h-1.5 bg-orange-500 rounded-full"></div>
             </div>
             <div className="h-px w-12 sm:w-20 bg-gradient-to-l from-transparent via-gray-300 to-transparent"></div>
           </div>
@@ -247,7 +264,7 @@ const Projects = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 mt-10">
             <div className="space-y-4">
-              <div className="text-4xl md:text-5xl font-bold text-blue-600">3</div>
+              <div className="text-4xl md:text-5xl font-bold text-blue-600">4</div>
               <p className="text-base sm:text-lg text-gray-600 tracking-wider">MAJOR CLIENTS</p>
             </div>
             <div className="space-y-4">
