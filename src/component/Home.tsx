@@ -157,15 +157,15 @@ const Home: React.FC = () => {
         <div className="absolute left-4 right-4 bottom-20 sm:bottom-28 md:bottom-36 lg:bottom-44 z-20">
           {[
             {
-              title: "Building Dreams, Shaping Skylines",
+              title: "Civil Work and Infrastructure",
               desc: "Excellence in every foundation we lay.",
             },
             {
-              title: "Engineering the Future",
+              title: "Telecom Tower",
               desc: "Where precision meets innovation and trust.",
             },
             {
-              title: "Constructing with Integrity",
+              title: "Modernization Of 33KV Substation",
               desc: "Delivering sustainable infrastructure with passion.",
             },
           ].map((text, index) => (
