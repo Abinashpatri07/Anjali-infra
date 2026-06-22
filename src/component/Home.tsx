@@ -143,7 +143,7 @@ const Home: React.FC = () => {
               ? "md:scale-110 scale-100" // ✅ Zoom only from md screen upward
               : "scale-100"
           } 
-          object-contain sm:object-cover
+          object-cover
         `}
               />
             </div>

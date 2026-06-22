@@ -40,7 +40,7 @@ const Founder = () => {
             },
             {
               name: "Soumya Ranjan Mishra",
-              title: "Co-Founder",
+              title: "Partner",
               image: founder2,
               color: "from-indigo-500 to-purple-500",
             },

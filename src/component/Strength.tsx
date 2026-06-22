@@ -339,7 +339,7 @@ const Strength: React.FC = () => {
       images: [{ name: "V Veerababu", src: veerababu }],
     },
     {
-      names: ["K Ramesh Babu", "Sai Prasad", "P Anil Kumar"],
+      names: ["K Ramesh Babu", "Sai Prasad"],
       role: "Project Engineers",
       icon: HardHat,
       color: "from-orange-600 to-red-600",
@@ -347,7 +347,6 @@ const Strength: React.FC = () => {
       images: [
         { name: "K Ramesh Babu", src: ramesh },
         { name: "Sai Prasad", src: normal },
-        { name: "P Anil Kumar", src: normal },
       ],
     },
     {
@@ -451,7 +450,9 @@ const Strength: React.FC = () => {
             return (
               <div
                 key={index}
-                className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500 overflow-hidden border border-slate-100"
+                className={`group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500 overflow-hidden border border-slate-100 ${
+                  index === 3 ? "lg:col-start-2" : ""
+                }`}
               >
                 <div
                   className={`absolute inset-0 bg-gradient-to-br ${member.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}
