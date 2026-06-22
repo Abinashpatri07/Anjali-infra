@@ -37,29 +37,34 @@ const ContactUs = () => {
     setIsSubmitting(true);
 
     try {
-      const backendUrl = window.location.hostname === "localhost"
-        ? "http://localhost:5000"
-        : "https://anjaliinfraservice.onrender.com";
-
-      const response = await fetch(`${backendUrl}/api/contact-us`,{
-        method: 'POST', 
+      // Send via Web3Forms API
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
+          Accept: "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          access_key: "2222193f-9a39-4386-882c-8ab22025815b",
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          from_name: "Anjali Infra Website",
+        }),
       });
       
       const result = await response.json();
-      
-      if (response.ok && result.success) {
+
+      if (result.success) {
         setShowSuccessPopup(true);
         setFormData({ name: '', email: '', subject: '', message: '' });
       } else {
-        setErrorMessage('Failed to send message: ' + (result.message || 'Please try again later.'));
+        setErrorMessage(result.message || 'Failed to send message. Please try again later.');
       }
     } catch (error) {
       console.error('Error sending message:', error);
-      setErrorMessage('Network error. Please make sure the backend is running and try again.');
+      setErrorMessage('Failed to send message. Please check your internet connection or try again later.');
     } finally {
       setIsSubmitting(false);
     }
