@@ -156,7 +156,9 @@ const Services: React.FC<ServicesProps> = ({ services, openPopup }) => {
             {services.map((service) => (
               <div
                 key={service.id}
-                className="p-5 lg:p-6 bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-500 group"
+                className={`p-5 lg:p-6 bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-500 group ${
+                  service.id === 3 ? "sm:translate-x-[calc(50%+0.5rem)] lg:translate-x-[calc(50%+0.75rem)]" : ""
+                }`}
               >
                 <div
                   className={`w-10 h-10 lg:w-12 lg:h-12 flex items-center justify-center bg-gradient-to-br ${service.colorTheme.gradient} text-white rounded-xl mb-3 lg:mb-4`}

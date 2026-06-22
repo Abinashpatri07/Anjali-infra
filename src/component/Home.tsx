@@ -80,7 +80,7 @@ const Home: React.FC = () => {
     },
     {
       id: 3,
-      title: "Road Construction",
+      title: "Civil Infrastructure",
       subtitle: "DEVELOPMENT & INFRASTRUCTURE",
       icon: (
         <svg
